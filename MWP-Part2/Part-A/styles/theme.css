@@ -1,0 +1,81 @@
+
+/*
+ * Styles for the page header (navigation bar) and footer.
+ */
+header.top-bar {
+    position: absolute;
+    top: 0px;
+    display: block;
+    overflow: auto;
+}
+
+footer.bottom-bar {
+    position: absolute;
+    bottom: 0px;
+}
+
+/*nav, #form-login {*/
+    /*vertical-align: middle;*/
+    /*display: inline;*/
+/*}*/
+
+.top-bar table {
+    width: 100%;
+}
+
+nav {
+    display: inline-block;
+    text-align: right;
+}
+
+form {
+    text-align: right;
+}
+
+nav a {
+    /* Styles the navigation links in the navigation bar */
+    /*text-transform: uppercase;*/
+    text-decoration: none;
+    font-size: 125%;
+    font-weight: bolder;
+    vertical-align: middle;
+}
+
+nav a.current-page {
+    color: #404140;
+}
+
+#logo {
+    /* The ITU.film png logo */
+    width: 161px;
+    float: left;
+}
+
+header.top-bar, footer.bottom-bar {
+    width: 100%;
+    background-color: #979797;
+    z-index: 100;  /* Make navigation bar and footer bar overlay all other elements. */
+}
+
+/*************************************************************/
+
+body {
+    font-family: Arial, Helvetica, sans-serif; /* Define default font for all elements */
+    background-color: #404140;
+    margin: 0px;
+}
+
+a {
+    /* Set style rules common to all links  on the page */
+    color: #CD2027; /* Red color of the ITU.film logo */
+
+}
+
+.right-aligned {
+    display: inline;
+    text-align: right;
+    float: right;
+    vertical-align: middle;
+    height: inherit;
+}
+/* TODO create a:hover? Maybe change color, underline, whatever. */
