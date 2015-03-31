@@ -3,66 +3,195 @@
  * Styles for the page header (navigation bar) and footer.
  */
 header.top-bar {
-    position: absolute;
+    position: fixed;
     top: 0px;
     display: block;
     overflow: auto;
+    padding: 0px;
+    margin: 0px;
+    line-height: 60px;
+    box-shadow: 0px 2px 2px;
+}
+
+header.top-bar .inline-block {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0px;
 }
 
 footer.bottom-bar {
     position: absolute;
     bottom: 0px;
-}
-
-/*nav, #form-login {*/
-    /*vertical-align: middle;*/
-    /*display: inline;*/
-/*}*/
-
-.top-bar table {
-    width: 100%;
-}
-
-nav {
-    display: inline-block;
-    text-align: right;
-}
-
-form {
-    text-align: right;
+    box-shadow: 0px -1px 2px;
+    text-align: center;
+    font-size: 0.75em;
 }
 
 nav a {
     /* Styles the navigation links in the navigation bar */
     /*text-transform: uppercase;*/
     text-decoration: none;
-    font-size: 125%;
+    font-size: 1.25em;
     font-weight: bolder;
     vertical-align: middle;
+    margin-right: 20px;
+    margin-left: 0px;
 }
 
 nav a.current-page {
     color: #404140;
 }
 
+nav a:hover {
+    color: white;
+}
+
 #logo {
     /* The ITU.film png logo */
-    width: 161px;
-    float: left;
+    /*width: 161px;*/
+    height: 48px;
+    /*float: left;*/
+}
+
+#form-login input {
+    margin: 0px;
 }
 
 header.top-bar, footer.bottom-bar {
     width: 100%;
     background-color: #979797;
     z-index: 100;  /* Make navigation bar and footer bar overlay all other elements. */
+    position: fixed; /* fixed position to keep header and footer visible at all times */
 }
 
 /*************************************************************/
 
+/*
+ * Styles for the promo banner.
+ */
+
+#banner {
+    margin-top: 20px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    position: relative;
+    display: inline-block;
+}
+
+#banner-event {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    display: inline;
+    text-align: right;
+    font-weight: bold;
+    float: right;
+}
+
+#banner-event-title {
+    font-size: 1.75em;
+    color: #CD2027;
+}
+
+#banner-event-date, #banner-event-location {
+    color: white;
+    font-size: 1.25em;
+}
+
+/*************************************************************/
+
+/*
+ * Styles for the main content.
+ */
+
+#content {
+    margin-top: 60px;
+}
+
+
+/* Leftmost part (2/3) */
+.leftSection article {
+    background-color: #D8D8D8;
+    border: 2px solid #979797;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.leftSection article h1 {
+    margin-top: 0px;
+}
+
+/* Rightmost part (1/3) */
+.rightSection section {
+    padding: 0px;
+    margin-bottom: 20px;
+}
+
+.rightSection section h1 {
+    color: white;
+    background-color: #979797;
+    margin: 0px;
+    padding: 10px;
+}
+
+img.movie-poster {
+    height: 107px;
+    /*display: inline-block;*/
+    float: left;
+    margin-right: 10px;
+}
+
+div.event {
+    background-color: #D8D8D8;
+    border-bottom: 1px solid #979797;
+    border-left: 1px solid #979797;
+    border-right: 1px solid #979797;
+    padding: 10px;
+    height: 107px;
+    text-overflow: ellipsis; /* Display "..." when text does not fit in container */
+}
+
+/*div.event p {*/
+    /*text-overflow: ellipsis;  Display "..." when text does not fit in container*/
+/*}*/
+
+div.event h4 {
+    margin-top: 0px;
+    margin-bottom: 0.3em;
+}
+
+div.event ul {
+    /* Hide bullet point in list displaying "Date and time" and "Location" for event */
+    list-style: none;
+    margin-top: 0px;
+    margin-bottom: 0.3em;
+    font-size: 0.9em;
+}
+
+.event li>span {
+    /* Make "Date and time" and "Location" stand out */
+    font-weight: bold;
+}
+
+/*************************************************************/
+
+/* General styles. */
+
 body {
     font-family: Arial, Helvetica, sans-serif; /* Define default font for all elements */
+    font-size: 0.9em;
     background-color: #404140;
     margin: 0px;
+    color: #404140;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.125em;
 }
 
 a {
@@ -70,6 +199,15 @@ a {
     color: #CD2027; /* Red color of the ITU.film logo */
 
 }
+
+.floatRight {
+    float: right;
+}
+
+.floatLeft {
+    float: left;
+}
+
 
 .right-aligned {
     display: inline;

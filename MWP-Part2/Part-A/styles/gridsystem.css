@@ -8,14 +8,29 @@
     margin-right: auto;
 }
 
-.navbar-col-8 {
-    float: left;
-    width: 49.5%;
-    margin-right: 1%;
+.leftSection {
+    width: 64%;
+    margin-right: 3%;
+    margin-top: 20px;
+    display: inline-block;
 }
 
-.navbar-col-4 {
-    float: left;
-    width: 24.25%;
-    margin-right: 1%;
+.rightSection {
+    width: 33%;
+    /*margin-left: 3%;*/
+    margin-top: 20px;
+    display: inline-block;
+    float: right;
 }
+
+/*.navbar-col-8 {*/
+    /*float: left;*/
+    /*width: 49.5%;*/
+    /*margin-right: 1%;*/
+/*}*/
+
+/*.navbar-col-4 {*/
+    /*float: left;*/
+    /*width: 24.25%;*/
+    /*margin-right: 1%;*/
+/*}*/

@@ -11,48 +11,109 @@
 
 <header class="top-bar"> <!-- Begin navigation bar -->
     <div class="pagewrapper">
-        <table>
-            <tr>
-                <td><img src="images/logo.png" id="logo"/></td>
-                <td>
-                    <nav>
-                        <a href="" class="current-page">Home</a>
-                        <a href="">Movies</a>
-                        <a href="">Blogs</a>
-                        <a href="">About</a>
-                    </nav>
-                </td>
-                <td>
-                    <form id="form-login">
-                        <input type="email" name="email"/>
-                        <input type="password" name="password"/>
-                        <input type="submit" value="Sign in"/>
-                    </form>
-                </td>
-            </tr>
-        </table>
-        <!--<img src="images/logo.png" id="logo"/>-->
-
-        <!--<div class="right-aligned">-->
-            <!--<nav>-->
-                <!--<a href="" class="current-page">Home</a>-->
-                <!--<a href="">Movies</a>-->
-                <!--<a href="">Blogs</a>-->
-                <!--<a href="">About</a>-->
-            <!--</nav>-->
-
-            <!--<form id="form-login">-->
-                <!--<input type="email" name="email"/>-->
-                <!--<input type="password" name="password"/>-->
-                <!--<input type="submit" value="Sign in"/>-->
-            <!--</form>-->
+        <img src="images/logo.png" id="logo" class="inline-block" />
+        <div class="floatRight"> <!-- align the menu links and login to the right edge of the page -->
+            <nav class="inline-block">
+                <a href="" class="current-page">Home</a>
+                <a href="">Movies</a>
+                <a href="">Blogs</a>
+                <a href="">About</a>
+            </nav>
+            <div class="inline-block">
+                <form id="form-login">
+                    <input type="email" name="email" placeholder="E-mail"/>
+                    <input type="password" name="password" placeholder="Password"/>
+                    <input type="submit" value="Sign in"/>
+                </form>
+            </div>
         </div>
     </div>
 </header>
 <!-- End navigation bar -->
 
 <div id="content" class="pagewrapper">
-    Lorem ipsum lol.
+
+    <div id="banner"> <!-- Begin promo banner -->
+        <img src="images/the-dark-knight.jpg" alt="Next Screening: The Dark Knight"/>
+        <div id="banner-event">
+            <span id="banner-event-title">The Dark Knight</span><br/>
+            <span id="banner-event-date">10-03-2015, 16:00</span><br/>
+            <span id="banner-event-location">Café Analog</span>
+        </div>
+    </div> <!-- End promo banner -->
+
+    <div class="leftSection"> <!-- Main content leftmost part (2/3 of width) -->
+        <article>
+            <h1>It's Summertime: Outdoor Screenings</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+            </p>
+        </article>
+        <article>
+            <h1>Introducing: Thriller Thursday</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+            </p>
+        </article>
+    </div>
+
+    <div class="rightSection"> <!-- Main content rightmost part (1/3 of width) -->
+        <section id="upcoming-events">
+            <h1>Upcoming Events</h1>
+            <div class="event">
+                <img src="images/the-dark-knight-poster.jpg" alt="movie poster: The Dark Knight" class="movie-poster" />
+                <!--<div class="event-info">-->
+                <h4>The Dark Knight</h4>
+                <ul>
+                    <li><span>Date and time:</span> 10-03-2015, 16:00</li>
+                    <li><span>Location:</span> Café Analog</li>
+                </ul>
+                <p>
+                When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader
+                must come to terms with one of the greatest psychological tests of his ability to fight injustice.
+                </p>
+                <!--</div>-->
+
+
+                <!--<p>-->
+                    <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.-->
+                    <!--Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.-->
+                    <!--Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.-->
+                    <!--Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.-->
+                    <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.-->
+                <!--</p>-->
+            </div>
+            <div class="event">
+                <img src="images/gladiator-poster.jpg" alt="movie poster: Gladiator" class="movie-poster" />
+            </div>
+        </section>
+        <section id="recent-blogs">
+            <h1>Recent Blogs</h1>
+        </section>
+    </div>
+
 </div>
 
 <footer class="bottom-bar">
