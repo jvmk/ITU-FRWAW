@@ -1,141 +1,10 @@
-/*************************************************************/
-/* Styles for the top bar and its contained page header (which in turn contains the navigation bar) */
-#top-bar {
-    top: 0px;
-    box-shadow: 0px 2px 2px;
-    height: 60px;
-    line-height: 60px;
-}
 
-#top-bar header {
-    display: block;
-    overflow: hidden; /* Needed in order to avoid header being assigned a height of 0 */
-}
-
-.header-lhs {
-    float: left;
-}
-
-.header-lhs img {
-    width: 161px;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.header-rhs {
-    float: right;
-}
-
-.header-rhs nav, .header-rhs form {
-    display: inline-block;
-}
-
-nav a {
-    /* Styles the navigation links in the navigation bar */
-    text-decoration: none;
-    font-size: 1.25em;
-    font-weight: bolder;
-    vertical-align: middle;
-    margin-right: 20px;
-    margin-left: 0px;
-}
-
-nav a.current-page {
-    color: #404140;
-}
-
-nav a:hover {
-    color: white;
-}
-/*************************************************************/
-
-
-
-/*************************************************************/
-/* Styles for the bottom bar */
-#bottom-bar {
-    bottom: 0px;
-    box-shadow: 0px -1px 2px;
-}
-#bottom-bar footer {
-    text-align: center;
-    font-size: 0.9em;
-}
-/*************************************************************/
-
-
-
-/*************************************************************/
-/* Styles common to both the top-bar and the bottom-bar */
-#top-bar, #bottom-bar {
-    width: 100%; /* Extend width to entire viewport */
-    background-color: #979797;
-    z-index: 100;  /* Make navigation bar and footer bar overlay all other elements. */
-    position: fixed; /* fixed position to keep header and footer visible at all times */
-}
-/*************************************************************/
-
-
-
-/*************************************************************/
-/* Styles for the promo banner. */
-#banner {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 0px;
-    margin-right: 0px;
-    position: relative;
-    display: inline-block;
-}
-
-#banner-event {
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    display: inline;
-    text-align: right;
-    font-weight: bold;
-    float: right;
-}
-
-#banner-event-title {
-    font-size: 1.75em;
-    color: #CD2027;
-}
-
-#banner-event-date, #banner-event-location {
-    color: white;
-    font-size: 1.25em;
-}
-/*************************************************************/
-
-
-
-/*************************************************************/
-/* Styles for the main content area that apply to both the left-most and the right-most part. */
-#content {
-    margin-top: 60px; /* Offset is identical to height of top-bar */
-}
-
-.leftSection section, .rightSection section {
-    border: 2px solid #979797;
-    margin-bottom: 20px;
-}
-
-.leftSection section>h1, .rightSection section>h1 {
-    color: white;
-    background-color: #979797;
-    padding: 10px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-/*************************************************************/
 
 
 
 /*************************************************************/
 /* Styles specific to the left-most part of the main content */
-.leftSection article {
+.main-content article {
     padding: 20px;
     margin: 0 0;
     background-color: #D8D8D8;
@@ -143,17 +12,17 @@ nav a:hover {
     text-align: justify;
 }
 
-.leftSection article:last-child {
+.main-content article:last-child {
     /* Remove border for last article to avoid double border at the bottom of the news section */
     border-bottom: none;
 }
 
-.leftSection article > h1 {
+.main-content article > h1 {
     margin-top: 0px;
     margin-bottom: 0.5em;
 }
 
-.leftSection article > img {
+.main-content article > img {
     width: 350px;
     float: right;
     margin: 0 0 15px 15px;
@@ -164,8 +33,8 @@ nav a:hover {
 
 /*************************************************************/
 /* Rightmost part (1/3) */
-.rightSection section {
-    padding: 0px;
+.sidebar section {
+    /*padding: 0px;*/
 }
 
 img.movie-poster {
@@ -206,32 +75,5 @@ div.event ul {
 /*************************************************************/
 
 /* General styles. */
-
-body {
-    font-family: Arial, Helvetica, sans-serif; /* Define default font for all elements */
-    font-size: 0.9em;
-    background-color: #404140;
-    margin: 0px;
-    color: #404140;
-}
-
-p {
-    margin-top: 0.6em;
-    margin-bottom: 0.6em;
-}
-
-h1 {
-    font-size: 1.5em;
-}
-
-h4 {
-    font-size: 1.125em;
-}
-
-a {
-    /* Set style rules common to all links  on the page */
-    color: #CD2027; /* Red color of the ITU.film logo */
-
-}
 
 /* TODO create a:hover? Maybe change color, underline, whatever. */

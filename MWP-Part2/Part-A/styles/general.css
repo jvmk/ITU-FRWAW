@@ -1,0 +1,206 @@
+/**********************************************************************************************************************/
+/* This stylesheet contains general styles, i.e. styles that are shared by all pages.                                 */
+/**********************************************************************************************************************/
+
+/* note to self: http://designshack.net/articles/css/rolling-your-own-grid-layouts-on-the-fly-without-a-framework/ */
+
+
+
+/**********************************************************************************************************************/
+/* Default styles for tags. Specifies the general/default look and feel of elements on the website. */
+body {
+    font-family: Arial, Helvetica, sans-serif; /* Define default font for all elements */
+    font-size: 0.9em;
+    background-color: #404140;
+    margin: 0px;
+    color: #404140;
+}
+
+p {
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.125em;
+}
+
+a {
+    /* Set style rules common to all links  on the page */
+    color: #CD2027; /* Red color of the ITU.film logo */
+}
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles specifying the overall layout of the main content of the page */
+.contentwrapper {
+    /* Content wrapper. Horizontally aligns content and adds a width of 960px */
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-content {
+    /* Left part (column) of main content */
+    /* Takes up roughly two thirds of the width */
+    width: 64%;
+    margin-right: 3%;
+    float: left;
+}
+
+.sidebar {
+    /* Right part (column) of main content */
+    /* This is the smaller part of the main content */
+    /* Takes up roughly one third of the width */
+    width: 33%;
+    float: right;
+}
+
+#content {
+    margin-top: 60px;  /* Offset content area according to the height of the top-bar */
+}
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles for the top bar and its contained page header (which in turn contains the navigation bar) */
+#top-bar {
+    top: 0px;
+    box-shadow: 0px 2px 2px;
+    height: 60px;
+    line-height: 60px;
+}
+
+#top-bar header {
+    display: block;
+    overflow: hidden; /* Needed in order to avoid header being assigned a height of 0 */
+}
+
+.header-lhs {
+    float: left;
+}
+
+.header-lhs img {
+    width: 161px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.header-rhs {
+    float: right;
+}
+
+.header-rhs nav, .header-rhs form {
+    display: inline-block;
+}
+
+nav a {
+    /* Styles the navigation links in the navigation bar */
+    text-decoration: none;
+    font-size: 1.25em;
+    font-weight: bolder;
+    vertical-align: middle;
+    margin-right: 20px;
+    margin-left: 0px;
+}
+
+nav a.current-page {
+    color: #404140;
+}
+
+nav a:hover {
+    color: white;
+}
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles for the bottom bar */
+#bottom-bar {
+    bottom: 0px;
+    box-shadow: 0px -1px 2px;
+}
+#bottom-bar footer {
+    text-align: center;
+    font-size: 0.9em;
+}
+/**********************************************************************************************************************/
+
+
+
+
+/**********************************************************************************************************************/
+/* Styles common to both the top-bar and the bottom-bar */
+#top-bar, #bottom-bar {
+    width: 100%; /* Extend width to entire viewport */
+    background-color: #979797;
+    z-index: 100;  /* Make navigation bar and footer bar overlay all other elements. */
+    position: fixed; /* fixed position to keep header and footer visible at all times */
+}
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles for the promo banner. */
+#banner {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    position: relative;
+    display: inline-block;
+}
+
+#banner-event {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    display: inline;
+    text-align: right;
+    font-weight: bold;
+    float: right;
+}
+
+#banner-event-title {
+    font-size: 1.75em;
+    color: #CD2027;
+}
+
+#banner-event-date, #banner-event-location {
+    color: white;
+    font-size: 1.25em;
+}
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles for elements in the main-content and the sidebar. */
+.main-content section, .sidebar section {
+    border: 2px solid #979797;
+    margin-bottom: 20px;
+}
+
+.main-content section>h1, .sidebar section>h1 {
+    color: white;
+    background-color: #979797;
+    padding: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.sidebar .section-item {
+    padding: 10px;
+    background-color: #D8D8D8;
+    border-bottom: 1px solid #979797;
+}
+/**********************************************************************************************************************/
