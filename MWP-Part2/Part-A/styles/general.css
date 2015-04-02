@@ -202,5 +202,26 @@ nav a:hover {
     padding: 10px;
     background-color: #D8D8D8;
     border-bottom: 1px solid #979797;
+    max-height: 107px;
+}
+
+.sidebar .section-item .thumbnail {
+    /* Area of a sidebar section-item where an image can be displayed. */
+    width: 72px;
+    padding: 0 0;
+    margin-right: 10px;
+    float: left;
+}
+
+.sidebar .section-item .details {
+    /* Area of a sidebar section-item where written details can be provided. */
+    /*padding: 0 0;*/
+    margin: 0px;
+    width: auto;
+}
+
+.sidebar .section-item .details *:first-child {
+    /* Remove any margin-top of first child to align it with thumbnail */
+    margin-top: 0px;
 }
 /**********************************************************************************************************************/
