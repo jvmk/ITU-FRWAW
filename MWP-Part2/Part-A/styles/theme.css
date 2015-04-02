@@ -19,14 +19,11 @@
 
 #top-bar header {
     display: block;
-    /*margin-bottom: 0px;*/
-    padding: 0 0;
-    overflow: hidden;
+    overflow: hidden; /* Needed in order to avoid header being assigned a height of 0 */
 }
 
 .header-lhs {
     float: left;
-    overflow: hidden;
 }
 
 .header-lhs img {
@@ -42,38 +39,6 @@
 .header-rhs nav, .header-rhs form {
     display: inline-block;
 }
-
-.header-end {
-    clear: both;
-}
-
-/*#top-bar ul {*/
-    /*padding: 0 0;*/
-    /*margin: 0 0;*/
-    /*margin-bottom: 0px;*/
-    /*list-style: none;*/
-    /*height: auto;*/
-    /*float: left;*/
-    /*width: 100%;*/
-/*}*/
-
-/*#top-bar li {*/
-    /*display: block;*/
-    /*float: left;*/
-    /*text-align: right;*/
-    /*width: 799px;*/
-/*}*/
-
-/*#top-bar ul li:first-child {*/
-    /*text-align: left;*/
-    /*width: auto;*/
-/*}*/
-
-/*header.top-bar .inline-block {*/
-    /*display: inline-block;*/
-    /*vertical-align: middle;*/
-    /*margin: 0px;*/
-/*}*/
 
 footer.bottom-bar {
     position: absolute;
@@ -100,17 +65,6 @@ nav a.current-page {
 
 nav a:hover {
     color: white;
-}
-
-#logo {
-    /* The ITU.film png logo */
-    /*height: 48px;*/
-    width: 161px;
-    /*display: inline;*/
-}
-
-#form-login input {
-    margin: 0px;
 }
 
 /*************************************************************/
@@ -247,11 +201,6 @@ a {
     /* Set style rules common to all links  on the page */
     color: #CD2027; /* Red color of the ITU.film logo */
 
-}
-
-.floatRight {
-    float: right;
-    display: inline-block;
 }
 
 /* TODO create a:hover? Maybe change color, underline, whatever. */
