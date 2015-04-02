@@ -199,25 +199,26 @@ nav a:hover {
 }
 
 .sidebar .section-item {
-    padding: 10px;
     background-color: #D8D8D8;
     border-bottom: 1px solid #979797;
-    max-height: 107px;
+    display: table-row;
 }
 
 .sidebar .section-item .thumbnail {
     /* Area of a sidebar section-item where an image can be displayed. */
     width: 72px;
-    padding: 0 0;
-    margin-right: 10px;
-    float: left;
+    padding: 10px;
+    /*margin-right: 10px;*/
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .sidebar .section-item .details {
     /* Area of a sidebar section-item where written details can be provided. */
-    /*padding: 0 0;*/
+    padding: 10px 10px 10px 0px;
     margin: 0px;
-    width: auto;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .sidebar .section-item .details *:first-child {
