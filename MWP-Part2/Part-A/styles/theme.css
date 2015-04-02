@@ -6,7 +6,6 @@ header.top-bar {
     position: fixed;
     top: 0px;
     display: block;
-    overflow: auto;
     padding: 0px;
     margin: 0px;
     line-height: 60px;
@@ -48,9 +47,7 @@ nav a:hover {
 
 #logo {
     /* The ITU.film png logo */
-    /*width: 161px;*/
     height: 48px;
-    /*float: left;*/
 }
 
 #form-login input {
@@ -202,10 +199,6 @@ a {
 
 .floatRight {
     float: right;
-}
-
-.floatLeft {
-    float: left;
 }
 
 /* TODO create a:hover? Maybe change color, underline, whatever. */
