@@ -1,6 +1,4 @@
-/* Home-made grid system based on this article:
- * http://designshack.net/articles/css/rolling-your-own-grid-layouts-on-the-fly-without-a-framework/
- */
+/* note to self: http://designshack.net/articles/css/rolling-your-own-grid-layouts-on-the-fly-without-a-framework/ */
 
 .pagewrapper {
     width: 960px;
@@ -11,26 +9,10 @@
 .leftSection {
     width: 64%;
     margin-right: 3%;
-    margin-top: 20px;
-    display: inline-block;
+    float: left;
 }
 
 .rightSection {
     width: 33%;
-    /*margin-left: 3%;*/
-    margin-top: 20px;
-    display: inline-block;
     float: right;
 }
-
-/*.navbar-col-8 {*/
-    /*float: left;*/
-    /*width: 49.5%;*/
-    /*margin-right: 1%;*/
-/*}*/
-
-/*.navbar-col-4 {*/
-    /*float: left;*/
-    /*width: 24.25%;*/
-    /*margin-right: 1%;*/
-/*}*/

@@ -81,7 +81,7 @@ nav a:hover {
 /* Styles for the promo banner. */
 #banner {
     margin-top: 20px;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
     margin-left: 0px;
     margin-right: 0px;
     position: relative;
@@ -112,34 +112,60 @@ nav a:hover {
 
 
 /*************************************************************/
-/* Styles for the main content. */
+/* Styles for the main content area that apply to both the left-most and the right-most part. */
 #content {
     margin-top: 60px; /* Offset is identical to height of top-bar */
 }
 
-/* Leftmost part (2/3) */
-.leftSection article {
-    background-color: #D8D8D8;
+.leftSection section, .rightSection section {
     border: 2px solid #979797;
-    padding: 20px;
     margin-bottom: 20px;
 }
 
-.leftSection article h1 {
+.leftSection section>h1, .rightSection section>h1 {
+    color: white;
+    background-color: #979797;
+    padding: 10px;
     margin-top: 0px;
+    margin-bottom: 0px;
+}
+/*************************************************************/
+
+
+
+/*************************************************************/
+/* Styles specific to the left-most part of the main content */
+.leftSection article {
+    padding: 20px;
+    margin: 0 0;
+    background-color: #D8D8D8;
+    border-bottom: 2px solid #979797;
+    text-align: justify;
 }
 
+.leftSection article:last-child {
+    /* Remove border for last article to avoid double border at the bottom of the news section */
+    border-bottom: none;
+}
+
+.leftSection article > h1 {
+    margin-top: 0px;
+    margin-bottom: 0.5em;
+}
+
+.leftSection article > img {
+    width: 350px;
+    float: right;
+    margin: 0 0 15px 15px;
+}
+/*************************************************************/
+
+
+
+/*************************************************************/
 /* Rightmost part (1/3) */
 .rightSection section {
     padding: 0px;
-    margin-bottom: 20px;
-}
-
-.rightSection section h1 {
-    color: white;
-    background-color: #979797;
-    margin: 0px;
-    padding: 10px;
 }
 
 img.movie-poster {
@@ -152,16 +178,12 @@ img.movie-poster {
 div.event {
     background-color: #D8D8D8;
     border-bottom: 1px solid #979797;
-    border-left: 1px solid #979797;
-    border-right: 1px solid #979797;
+    /*border-left: 1px solid #979797;*/
+    /*border-right: 1px solid #979797;*/
     padding: 10px;
     height: 107px;
     text-overflow: ellipsis; /* Display "..." when text does not fit in container */
 }
-
-/*div.event p {*/
-    /*text-overflow: ellipsis;  Display "..." when text does not fit in container*/
-/*}*/
 
 div.event h4 {
     margin-top: 0px;
@@ -191,6 +213,11 @@ body {
     background-color: #404140;
     margin: 0px;
     color: #404140;
+}
+
+p {
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
 }
 
 h1 {
