@@ -1,20 +1,10 @@
-
-/*
- * Styles for the page header (navigation bar) and footer.
- */
+/*************************************************************/
+/* Styles for the top bar and its contained page header (which in turn contains the navigation bar) */
 #top-bar {
     top: 0px;
     box-shadow: 0px 2px 2px;
     height: 60px;
     line-height: 60px;
-}
-
-#top-bar, footer.bottom-bar {
-    /* Styles common to both the top-bar and the bottom-bar */
-    width: 100%;
-    background-color: #979797;
-    z-index: 100;  /* Make navigation bar and footer bar overlay all other elements. */
-    position: fixed; /* fixed position to keep header and footer visible at all times */
 }
 
 #top-bar header {
@@ -40,17 +30,8 @@
     display: inline-block;
 }
 
-footer.bottom-bar {
-    position: absolute;
-    bottom: 0px;
-    box-shadow: 0px -1px 2px;
-    text-align: center;
-    font-size: 0.75em;
-}
-
 nav a {
     /* Styles the navigation links in the navigation bar */
-    /*text-transform: uppercase;*/
     text-decoration: none;
     font-size: 1.25em;
     font-weight: bolder;
@@ -66,13 +47,38 @@ nav a.current-page {
 nav a:hover {
     color: white;
 }
-
 /*************************************************************/
 
-/*
- * Styles for the promo banner.
- */
 
+
+/*************************************************************/
+/* Styles for the bottom bar */
+#bottom-bar {
+    bottom: 0px;
+    box-shadow: 0px -1px 2px;
+}
+#bottom-bar footer {
+    text-align: center;
+    font-size: 0.9em;
+}
+/*************************************************************/
+
+
+
+/*************************************************************/
+/* Styles common to both the top-bar and the bottom-bar */
+#top-bar, #bottom-bar {
+    width: 100%; /* Extend width to entire viewport */
+    background-color: #979797;
+    z-index: 100;  /* Make navigation bar and footer bar overlay all other elements. */
+    position: fixed; /* fixed position to keep header and footer visible at all times */
+}
+/*************************************************************/
+
+
+
+/*************************************************************/
+/* Styles for the promo banner. */
 #banner {
     margin-top: 20px;
     margin-bottom: 0px;
@@ -101,17 +107,15 @@ nav a:hover {
     color: white;
     font-size: 1.25em;
 }
-
 /*************************************************************/
 
-/*
- * Styles for the main content.
- */
 
+
+/*************************************************************/
+/* Styles for the main content. */
 #content {
-    margin-top: 60px;
+    margin-top: 60px; /* Offset is identical to height of top-bar */
 }
-
 
 /* Leftmost part (2/3) */
 .leftSection article {
