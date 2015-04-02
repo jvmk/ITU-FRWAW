@@ -200,7 +200,6 @@ nav a:hover {
 
 .sidebar .section-item {
     background-color: #D8D8D8;
-    border-bottom: 1px solid #979797;
     display: table-row;
 }
 
@@ -208,9 +207,9 @@ nav a:hover {
     /* Area of a sidebar section-item where an image can be displayed. */
     width: 72px;
     padding: 10px;
-    /*margin-right: 10px;*/
     display: table-cell;
     vertical-align: middle;
+    border-bottom: 1px solid #979797;
 }
 
 .sidebar .section-item .details {
@@ -219,6 +218,12 @@ nav a:hover {
     margin: 0px;
     display: table-cell;
     vertical-align: middle;
+    border-bottom: 1px solid #979797;
+}
+
+.sidebar .section-item .details>.details-content-wrapper {
+    height: 107px;
+    overflow: scroll;
 }
 
 .sidebar .section-item .details *:first-child {
