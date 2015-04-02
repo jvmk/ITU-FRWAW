@@ -208,12 +208,4 @@ a {
     float: left;
 }
 
-
-.right-aligned {
-    display: inline;
-    text-align: right;
-    float: right;
-    vertical-align: middle;
-    height: inherit;
-}
 /* TODO create a:hover? Maybe change color, underline, whatever. */
