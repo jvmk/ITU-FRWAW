@@ -9,27 +9,73 @@
 </head>
 <body>
 
-<header class="top-bar"> <!-- Begin navigation bar -->
-    <div class="pagewrapper">
-        <img src="images/logo.png" id="logo" class="inline-block" />
-        <div class="floatRight"> <!-- align the menu links and login to the right edge of the page -->
-            <nav class="inline-block">
+<div id="top-bar">
+    <header class="pagewrapper"> <!-- Begin navigation bar. Use of class constraints width to page width. -->
+        <div class="header-lhs">
+            <img src="images/logo.png" />
+        </div>
+        <!-- align the menu links and login to the right edge of the page -->
+        <div class="header-rhs">
+            <nav>
                 <a href="" class="current-page">Home</a>
                 <a href="">Movies</a>
                 <a href="">Blogs</a>
                 <a href="">About</a>
             </nav>
-            <div class="inline-block">
-                <form id="form-login">
-                    <input type="email" name="email" placeholder="E-mail"/>
-                    <input type="password" name="password" placeholder="Password"/>
-                    <input type="submit" value="Sign in"/>
-                </form>
-            </div>
+            <form id="form-login">
+                <input type="email" name="email" placeholder="E-mail"/>
+                <input type="password" name="password" placeholder="Password"/>
+                <input type="submit" value="Sign in"/>
+            </form>
         </div>
-    </div>
-</header>
-<!-- End navigation bar -->
+        <!--<div class="header-end"></div> &lt;!&ndash; Hack such that header tag will have a height &ndash;&gt;-->
+    </header> <!-- End navigation bar -->
+</div>
+
+
+<!--<div id="top-bar">-->
+    <!--<header class="pagewrapper"> &lt;!&ndash; Begin navigation bar. Use of class constraints width to page width. &ndash;&gt;-->
+        <!--<ul>-->
+            <!--<li>-->
+                <!--<img src="images/logo.png" id="logo" />-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<nav>-->
+                    <!--<a href="" class="current-page">Home</a>-->
+                    <!--<a href="">Movies</a>-->
+                    <!--<a href="">Blogs</a>-->
+                    <!--<a href="">About</a>-->
+                <!--</nav>-->
+                <!--<form id="form-login">-->
+                    <!--<input type="email" name="email" placeholder="E-mail"/>-->
+                    <!--<input type="password" name="password" placeholder="Password"/>-->
+                    <!--<input type="submit" value="Sign in"/>-->
+                <!--</form>-->
+            <!--</li>-->
+        <!--</ul>-->
+    <!--</header> &lt;!&ndash; End navigation bar &ndash;&gt;-->
+<!--</div>-->
+
+<!--<div id="top-bar">-->
+    <!--<header class="pagewrapper"> &lt;!&ndash; Begin navigation bar. Use of class constraints width to page width. &ndash;&gt;-->
+        <!--<img src="images/logo.png" id="logo" />-->
+        <!--&lt;!&ndash; align the menu links and login to the right edge of the page &ndash;&gt;-->
+        <!--<div class="header-rhs">-->
+            <!--<nav>-->
+                <!--<a href="" class="current-page">Home</a>-->
+                <!--<a href="">Movies</a>-->
+                <!--<a href="">Blogs</a>-->
+                <!--<a href="">About</a>-->
+            <!--</nav>-->
+            <!--<form id="form-login">-->
+                <!--<input type="email" name="email" placeholder="E-mail"/>-->
+                <!--<input type="password" name="password" placeholder="Password"/>-->
+                <!--<input type="submit" value="Sign in"/>-->
+            <!--</form>-->
+        <!--</div>-->
+    <!--</header> &lt;!&ndash; End navigation bar &ndash;&gt;-->
+<!--</div>-->
+
 
 <div id="content" class="pagewrapper">
 

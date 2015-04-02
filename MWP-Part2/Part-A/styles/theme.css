@@ -2,21 +2,78 @@
 /*
  * Styles for the page header (navigation bar) and footer.
  */
-header.top-bar {
-    position: fixed;
+#top-bar {
     top: 0px;
-    display: block;
-    padding: 0px;
-    margin: 0px;
-    line-height: 60px;
     box-shadow: 0px 2px 2px;
+    height: 60px;
+    line-height: 60px;
 }
 
-header.top-bar .inline-block {
+#top-bar, footer.bottom-bar {
+    /* Styles common to both the top-bar and the bottom-bar */
+    width: 100%;
+    background-color: #979797;
+    z-index: 100;  /* Make navigation bar and footer bar overlay all other elements. */
+    position: fixed; /* fixed position to keep header and footer visible at all times */
+}
+
+#top-bar header {
+    display: block;
+    /*margin-bottom: 0px;*/
+    padding: 0 0;
+    overflow: hidden;
+}
+
+.header-lhs {
+    float: left;
+    overflow: hidden;
+}
+
+.header-lhs img {
+    width: 161px;
     display: inline-block;
     vertical-align: middle;
-    margin: 0px;
 }
+
+.header-rhs {
+    float: right;
+}
+
+.header-rhs nav, .header-rhs form {
+    display: inline-block;
+}
+
+.header-end {
+    clear: both;
+}
+
+/*#top-bar ul {*/
+    /*padding: 0 0;*/
+    /*margin: 0 0;*/
+    /*margin-bottom: 0px;*/
+    /*list-style: none;*/
+    /*height: auto;*/
+    /*float: left;*/
+    /*width: 100%;*/
+/*}*/
+
+/*#top-bar li {*/
+    /*display: block;*/
+    /*float: left;*/
+    /*text-align: right;*/
+    /*width: 799px;*/
+/*}*/
+
+/*#top-bar ul li:first-child {*/
+    /*text-align: left;*/
+    /*width: auto;*/
+/*}*/
+
+/*header.top-bar .inline-block {*/
+    /*display: inline-block;*/
+    /*vertical-align: middle;*/
+    /*margin: 0px;*/
+/*}*/
 
 footer.bottom-bar {
     position: absolute;
@@ -47,18 +104,13 @@ nav a:hover {
 
 #logo {
     /* The ITU.film png logo */
-    height: 48px;
+    /*height: 48px;*/
+    width: 161px;
+    /*display: inline;*/
 }
 
 #form-login input {
     margin: 0px;
-}
-
-header.top-bar, footer.bottom-bar {
-    width: 100%;
-    background-color: #979797;
-    z-index: 100;  /* Make navigation bar and footer bar overlay all other elements. */
-    position: fixed; /* fixed position to keep header and footer visible at all times */
 }
 
 /*************************************************************/
@@ -199,6 +251,7 @@ a {
 
 .floatRight {
     float: right;
+    display: inline-block;
 }
 
 /* TODO create a:hover? Maybe change color, underline, whatever. */
