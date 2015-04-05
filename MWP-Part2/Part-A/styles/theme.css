@@ -33,31 +33,6 @@
 
 /*************************************************************/
 /* Rightmost part (1/3) */
-.sidebar section {
-    /*padding: 0px;*/
-}
-
-img.movie-poster {
-    height: 107px;
-    /*display: inline-block;*/
-    float: left;
-    margin-right: 10px;
-}
-
-div.event {
-    background-color: #D8D8D8;
-    border-bottom: 1px solid #979797;
-    /*border-left: 1px solid #979797;*/
-    /*border-right: 1px solid #979797;*/
-    padding: 10px;
-    height: 107px;
-    text-overflow: ellipsis; /* Display "..." when text does not fit in container */
-}
-
-div.event h4 {
-    margin-top: 0px;
-    margin-bottom: 0.3em;
-}
 
 div.event ul {
     /* Hide bullet point in list displaying "Date and time" and "Location" for event */
