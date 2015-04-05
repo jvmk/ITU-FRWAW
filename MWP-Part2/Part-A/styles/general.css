@@ -212,8 +212,6 @@ nav a:hover {
 
 .sidebar .section-item .thumbnail {
     /* Area of a sidebar section-item where an image can be displayed. */
-    width: 72px;
-    height: 107px;
     padding: 10px;
     display: table-cell;
     vertical-align: middle;

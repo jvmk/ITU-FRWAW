@@ -25,21 +25,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Part-A/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7536232" vertical-offset="1980" max-vertical-offset="3210">
+            <state vertical-scroll-proportion="-32.5" vertical-offset="1980" max-vertical-offset="3210">
               <caret line="184" column="47" selection-start-line="184" selection-start-column="47" selection-end-line="184" selection-end-column="47" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="general.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="general.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Part-A/styles/general.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2160" max-vertical-offset="3915">
-              <caret line="146" column="10" selection-start-line="146" selection-start-column="10" selection-end-line="146" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.40509915" vertical-offset="2826" max-vertical-offset="3885">
+              <caret line="217" column="23" selection-start-line="217" selection-start-column="23" selection-end-line="217" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -63,8 +63,8 @@
         <option value="$PROJECT_DIR$/Part-A/styles/gridsystem.css" />
         <option value="$PROJECT_DIR$/Part-A/styles/theme.css" />
         <option value="$PROJECT_DIR$/Part-A/styles/home.css" />
-        <option value="$PROJECT_DIR$/Part-A/styles/general.css" />
         <option value="$PROJECT_DIR$/Part-A/index.html" />
+        <option value="$PROJECT_DIR$/Part-A/styles/general.css" />
       </list>
     </option>
   </component>
@@ -320,6 +320,14 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Part-A/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-32.5" vertical-offset="1980" max-vertical-offset="3210">
+          <caret line="184" column="47" selection-start-line="184" selection-start-column="47" selection-end-line="184" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Part-A/styles/home.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
@@ -330,16 +338,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Part-A/styles/general.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2160" max-vertical-offset="3915">
-          <caret line="146" column="10" selection-start-line="146" selection-start-column="10" selection-end-line="146" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Part-A/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7536232" vertical-offset="1980" max-vertical-offset="3210">
-          <caret line="184" column="47" selection-start-line="184" selection-start-column="47" selection-end-line="184" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.40509915" vertical-offset="2826" max-vertical-offset="3885">
+          <caret line="217" column="23" selection-start-line="217" selection-start-column="23" selection-end-line="217" selection-end-column="23" />
           <folding />
         </state>
       </provider>
