@@ -32,6 +32,12 @@ h4 {
 a {
     /* Set style rules common to all links  on the page */
     color: #CD2027; /* Red color of the ITU.film logo */
+    text-decoration: none;
+}
+
+a:hover {
+    /* Give visual feedback when user hovers a link. */
+    color: white;
 }
 /**********************************************************************************************************************/
 
@@ -201,6 +207,7 @@ nav a:hover {
 .sidebar .section-item {
     background-color: #D8D8D8;
     display: table-row;
+    font-size: 0.9em; /* Use smaller text for items in sidebar */
 }
 
 .sidebar .section-item .thumbnail {
