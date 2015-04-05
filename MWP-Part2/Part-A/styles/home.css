@@ -1,4 +1,8 @@
-/*************************************************************/
+/**********************************************************************************************************************/
+/* This stylesheet contains styles specific to the home (front) page, i.e. index.html.                                */
+/**********************************************************************************************************************/
+
+/**********************************************************************************************************************/
 /* Styles specific to the left-most part of the main content */
 .main-content article {
     padding: 20px;
@@ -23,28 +27,26 @@
     float: right;
     margin: 0 0 15px 15px;
 }
-/*************************************************************/
+/**********************************************************************************************************************/
 
 
 
-/*************************************************************/
-/* Rightmost part (1/3) */
-
-div.event ul {
+/**********************************************************************************************************************/
+/* Styles specific to the right-most part of the main content, i.e. the sidebar */
+.sidebar .section-item .details>.details-content-wrapper ul {
     /* Hide bullet point in list displaying "Date and time" and "Location" for event */
     list-style: none;
     margin-top: 0px;
     margin-bottom: 0.3em;
-    font-size: 0.9em;
+    padding: 0 0;
 }
 
-.event li>span {
+.sidebar .section-item .details>.details-content-wrapper li>span {
     /* Make "Date and time" and "Location" stand out */
     font-weight: bold;
 }
 
-/*************************************************************/
-
-/* General styles. */
-
-/* TODO create a:hover? Maybe change color, underline, whatever. */
+.sidebar .section-item .details>.details-content-wrapper h4 {
+    margin-bottom: 0.3em;
+}
+/**********************************************************************************************************************/
