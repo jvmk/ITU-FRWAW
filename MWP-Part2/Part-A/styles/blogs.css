@@ -5,5 +5,109 @@
 
 
 /**********************************************************************************************************************/
+/* Styles for the main part of a blog post, i.e. the actual post and blogger bio */
+
+.main-content article {
+    padding: 20px;
+    overflow: hidden; /* Hack to extend height to match child divs */
+}
+
+.main-content article>h1 {
+    margin-top: 0px;
+    margin-bottom: 0.5em;
+    float: left;
+    max-width: 45%; /* Constrain width such that heading and author-block won't stack */
+}
+
+.main-content article>div.author-block {
+    border-top: 1px solid #979797;
+    border-bottom: 1px solid #979797;
+    padding: 1em 1.7em 1em 1.7em;
+    float: right;
+    max-width: 45%; /* Constrain width such that heading and author-block won't stack */
+    font-size: 0.9em;
+    margin: 0 0 1em 1em;
+}
+
+.main-content article>div.author-block>div.author-profile-picture {
+    width: 72px;
+    float: right;
+}
+
+.main-content article>div.author-block>div.author-profile-picture>img {
+    width: 72px;
+}
+
+.main-content article>div.author-block>div.author-data {
+    overflow: hidden;
+    width: auto;
+}
+
+.main-content article>div.author-block>div.author-data>ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0 0.5em 0 0;
+    overflow: hidden;
+}
+
+.main-content article>div.author-block>div.author-data>ul>li:first-child {
+    /* Create small gap between blogger's username and the blogger's personal information */
+    margin-bottom: 0.5em;
+}
+
+.main-content article>div.author-block>div.author-data>ul>li>span {
+    font-weight: bold;
+}
+
+.main-content article>p {
+    clear: left; /* Do not let article text flow around article heading. */
+    text-align: justify;
+}
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles for the comments section of a blog post */
+.comments-block>.comment {
+    background-color: #979797;
+    padding: 1em;
+    margin-bottom: 1.25em;
+    overflow: hidden; /* Hack to extend height to match child divs */
+}
+
+.comments-block>.comment:last-child {
+    /* Remove bottom margin for last comment */
+    margin-bottom: 0;
+}
+
+.comments-block>.comment>.comment-user {
+    width: 100px;
+    max-width: 100px;
+    margin-right: 1em;
+    font-size: 0.8em;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    float: left;
+}
+
+.comments-block>.comment>.comment-user>img {
+    width: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comments-block>.comment>.comment-text {
+    background-color: #D8D8D8;
+    padding: 0.5em;
+    overflow: hidden;
+}
+
+.comments-block>.comment>.comment-text h6 {
+    margin: 0 0 1em 0;
+    text-align: right;
+}
 
 /**********************************************************************************************************************/
