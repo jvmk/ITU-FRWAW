@@ -68,6 +68,11 @@ a:hover {
     float: right;
 }
 
+.main-content section, .sidebar section {
+    /* Set default background-color for sections nested under main-content and sidebar */
+    background-color: #D8D8D8;
+}
+
 #content {
     margin-top: 60px;  /* Offset content area according to the height of the top-bar */
 }
