@@ -21,6 +21,10 @@ p {
     margin-bottom: 0.6em;
 }
 
+q {
+    font-style: italic;
+}
+
 h1 {
     font-size: 1.5em;
 }
@@ -250,6 +254,10 @@ nav a:hover {
 .sidebar .section-item .details>.details-content-wrapper {
     height: 107px;
     overflow: scroll;
+}
+
+.sidebar .section-item .details>.details-content-wrapper h4 {
+    margin-bottom: 0.3em;
 }
 
 .sidebar .section-item .details *:first-child {

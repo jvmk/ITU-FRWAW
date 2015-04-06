@@ -45,8 +45,4 @@
     /* Make "Date and time" and "Location" stand out */
     font-weight: bold;
 }
-
-.sidebar .section-item .details>.details-content-wrapper h4 {
-    margin-bottom: 0.3em;
-}
 /**********************************************************************************************************************/

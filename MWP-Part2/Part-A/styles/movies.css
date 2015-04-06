@@ -81,3 +81,51 @@ div.screening-info span.crew-comment {
 #screenings-schedule div.screening-info:last-child {
     border-bottom: none; /* Remove border for last child to avoid double border at the end of the section */
 }
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles for the Recommendations sidebar */
+
+#recommendations-filter {
+    padding: 10px;
+    border-bottom: 2px solid #979797;
+}
+
+#recommendations-filter select {
+    width: 100%;
+    font-size: 1.5em;
+}
+
+#recommendations-filter input[type="submit"] {
+    font-size: 1.5em;
+    float: right;
+}
+
+#recommendations-filter:after {
+    /* Clearfix (make container extend to match the height of its contents) */
+    /* Courtesy of http://stackoverflow.com/a/1633170/1214974 */
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#recommendations-filter .filtering-item >span {
+    font-weight: bold;
+    float: left;
+}
+
+#recommendations-filter .filtering-item {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    text-align: right;
+}
+
+.sidebar .section-item .details>.details-content-wrapper h5 {
+    /* Style the text that provides information about who recommended this movie */
+    font-size: 1em; /* Make heading same size as regular text */
+    font-weight: normal;
+    font-style: italic;
+    margin: 0 0 1em 0;
+}
