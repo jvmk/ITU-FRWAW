@@ -111,3 +111,46 @@
 }
 
 /**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles for the "Top Bloggers" section of the sidebar */
+
+#top-bloggers .top3 {
+    padding: 10px 10px 0 10px;
+}
+
+#top-bloggers .top3:last-child {
+    /* Add bottom padding to last child */
+    padding: 10px 10px 10px 10px
+}
+
+#top-bloggers table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #979797;
+}
+
+#top-bloggers table>caption {
+    color: white;
+    background-color: #979797;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.1em;
+    caption-side: top;
+}
+
+#top-bloggers table td, #top-bloggers table th {
+    /*border: 1px solid #979797;*/
+}
+
+#top-bloggers table th:nth-child(even), #top-bloggers table td:nth-child(even) {
+    text-align: right;
+}
+
+#top-bloggers table th:nth-child(odd), #top-bloggers table td:nth-child(odd) {
+    text-align: left;
+}
+
+/**********************************************************************************************************************/
