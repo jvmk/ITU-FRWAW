@@ -115,6 +115,41 @@
 
 
 /**********************************************************************************************************************/
+/* Styles for the rating section of a blog post */
+.rating-block {
+    clear: both;
+    overflow:hidden;
+}
+.rating-block form>span {
+    display: block;
+}
+
+.rating-block .rate-post-block {
+    float: left;
+}
+
+.rating-block .avg-rating-block {
+    float: right;
+}
+
+.rating-block .avg-rating-block:after {
+    /* Clearfix (make container extend to match the height of its contents) */
+    /* Courtesy of http://stackoverflow.com/a/1633170/1214974 */
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.rating-block h4 {
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}
+
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
 /* Styles for the "Top Bloggers" section of the sidebar */
 
 #top-bloggers .top3 {
@@ -152,5 +187,33 @@
 #top-bloggers table th:nth-child(odd), #top-bloggers table td:nth-child(odd) {
     text-align: left;
 }
+/**********************************************************************************************************************/
+
+
 
 /**********************************************************************************************************************/
+/* Styles for the "Search Blogs" section of the sidebar */
+
+#blog-search form {
+    overflow: hidden;
+    padding: 10px;
+}
+
+#blog-search form span {
+    display: block;
+    overflow: hidden;
+    padding-right: 1em;
+}
+
+#blog-search form input[type="submit"] {
+    font-size: 1.5em;
+    float: right;
+    /*overflow: hidden;*/
+
+}
+#blog-search form input[type="text"] {
+    font-size: 1em;
+    width: 100%;
+}
+/**********************************************************************************************************************/
+
