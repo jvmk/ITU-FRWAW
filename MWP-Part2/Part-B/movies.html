@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>ITU.film</title>
+    <link rel="stylesheet" type="text/css" href="styles/movies.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/general.css"/>
+    <!-- TODO link to CDN that delivers HTML5 Shiv js to support older browsers which do not support HTML5 -->
+</head>
+<body>
+
+<div id="top-bar">
+    <header class="contentwrapper"> <!-- Begin navigation bar. Use of class constraints width to page width. -->
+        <div class="header-lhs">
+            <a href="index.html" alt="Go to front page"><img src="images/logo.png" /></a>
+        </div>
+        <!-- align the menu links and login to the right edge of the page -->
+        <div class="header-rhs">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="movies.html" class="current-page">Movies</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="">About</a>
+            </nav>
+            <form id="form-login">
+                <input type="email" name="email" placeholder="E-mail"/>
+                <input type="password" name="password" placeholder="Password"/>
+                <input type="submit" value="Sign in"/>
+            </form>
+        </div>
+    </header> <!-- End navigation bar -->
+</div>
+
+<div id="content" class="contentwrapper">
+
+    <div id="banner"> <!-- Begin promo banner -->
+        <a href="" alt="Go to event details for screening">
+            <img src="images/the-dark-knight.jpg" alt="Next Screening: The Dark Knight"/>
+        </a>
+        <div id="banner-event">
+            <a href="" alt="Go to event details for screening"><span id="banner-event-title">The Dark Knight</span></a><br/>
+            <span id="banner-event-date">10-03-2015, 16:00</span><br/>
+            <span id="banner-event-location">Café Analog</span>
+        </div>
+    </div> <!-- End promo banner -->
+
+    <div class="main-content"> <!-- Main content leftmost part (2/3 of width) -->
+        <section id="screenings-schedule">
+            <h1 class="box-header">Screenings Schedule</h1>
+            <div id="schedule-search-tools"> <!-- Container for the search tools -->
+                <form>
+                    <select name="month">
+                        <option value="jan">January</option>
+                        <option value="feb">February</option>
+                        <option value="mar" selected>March</option>
+                        <option value="apr">April</option>
+                        <option value="may">May</option>
+                        <option value="jun">June</option>
+                        <option value="jul">July</option>
+                        <option value="aug">August</option>
+                        <option value="sep">September</option>
+                        <option value="oct">October</option>
+                        <option value="nov">November</option>
+                        <option value="dec">December</option>
+                    </select>
+                    <select name="year">
+                        <option value="2012">2012</option>
+                        <option value="2013">2013</option>
+                        <option value="2014">2014</option>
+                        <option value="2015" selected>2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                    </select>
+                    <input type="submit" value="Refresh"/>
+                </form>
+            </div>
+            <div class="screening-info">
+                <img src="images/the-dark-knight-poster-large.jpg" alt="The Dark Knight movie poster" class="poster"/>
+                <h1>The Dark Knight</h1>
+                <ul class="time-and-place-listing">
+                    <li>
+                        <span>When:</span> 10-03-2015, 16:00
+                    </li>
+                    <li>
+                        <span>Where:</span> Café Analog
+                    </li>
+                </ul>
+                <!-- The crew-comment class allows the ITU.film crew to add a small joke or similar -->
+                <span class="crew-comment">Please leave your latex suit at home!</span>
+                When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader
+                must come to terms with one of the greatest psychological tests of his ability to fight injustice.
+            </div>
+            <div class="screening-info">
+                <img src="images/gladiator-poster-large.jpg" alt="Gladiator movie poster" class="poster"/>
+                <h1>Gladiator</h1>
+                <ul class="time-and-place-listing">
+                    <li>
+                        <span>When:</span> 17-03-2015, 16:00
+                    </li>
+                    <li>
+                        <span>Where:</span> Café Analog
+                    </li>
+                </ul>
+                <!-- The crew-comment class allows the ITU.film crew to add a small joke or similar -->
+                <span class="crew-comment">Are you not entertained!?</span>
+                When a Roman general is betrayed and his family murdered by an emperor's corrupt son, he comes to Rome
+                as a gladiator to seek revenge.
+            </div>
+            <div class="screening-info">
+                <img src="images/american-gangster-poster-large.jpg" alt="American Gangster movie poster" class="poster"/>
+                <h1>American Gangster</h1>
+                <ul class="time-and-place-listing">
+                    <li>
+                        <span>When:</span> 19-03-2015, 20:00
+                    </li>
+                    <li>
+                        <span>Where:</span> Aud1
+                    </li>
+                </ul>
+                <!-- The crew-comment class allows the ITU.film crew to add a small joke or similar -->
+                <span class="crew-comment">My man!</span>
+                In 1970s America, a detective works to bring down the drug empire of Frank Lucas, a heroin kingpin from
+                Manhattan, who is smuggling the drug into the country from the Far East.
+            </div>
+        </section>
+    </div>
+
+    <div class="sidebar"> <!-- Main content rightmost part (1/3 of width) -->
+        <section id="recommendations">
+            <h1 class="box-header">Recommendations</h1>
+            <div id="recommendations-filter">
+                <form>
+                    <select>
+                        <option value="" disabled selected>Genre (optional)</option>
+                        <option value="horror">Horror</option>
+                        <option value="comedy">Comedy</option>
+                        <option value="thriller">Thriller</option>
+                        <option value="drama">Drama</option>
+                        <!-- Add more... -->
+                    </select>
+                    <div class="filtering-item">
+                        <span>Mood:</span>
+                        <input type="checkbox" name="mood" value="angry"/> Angry
+                        <input type="checkbox" name="mood" value="sad"/> Sad
+                        <input type="checkbox" name="mood" value="sour"/> Sour
+                        <input type="checkbox" name="mood" value="happy"/> Happy
+                    </div>
+                    <div class="filtering-item">
+                        <span>Recommended by:</span>
+                        <input type="radio" name="recommended-by" value="Friends"/> Friends
+                        <input type="radio" name="recommended-by" value="All"/> All
+                    </div>
+                    <input type="submit" value="Apply Filter"/>
+                </form>
+            </div>
+            <div class="section-item">
+                <div class="thumbnail">
+                    <div class="thumbnail-content-wrapper">
+                        <img src="images/gladiator-poster.jpg" alt="movie poster: Gladiator" />
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="details-content-wrapper">
+                        <a href=""><h4>Gladiator</h4></a>
+                        <h5>- by <a href="">DanTheMan</a></h5>
+                        <q>Just what I needed when I was feeling moody.</q>
+                    </div>
+                </div>
+            </div>
+            <div class="section-item">
+                <div class="thumbnail">
+                    <div class="thumbnail-content-wrapper">
+                        <img src="images/the-dark-knight-poster.jpg" alt="movie poster: The Dark Knight" />
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="details-content-wrapper">
+                        <a href=""><h4>The Dark Knight</h4></a>
+                        <h5>- by <a href="">FrankLucasFan</a></h5>
+                        <q>Simply amazing!</q>
+                    </div>
+                </div>
+            </div>
+            <div class="section-item">
+                <div class="thumbnail">
+                    <div class="thumbnail-content-wrapper">
+                        <img src="images/american-gangster-poster.jpg" alt="movie poster: American Gangster" />
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="details-content-wrapper">
+                        <a href=""><h4>American Gangster</h4></a>
+                        <h5>- by <a href="">FrankLucasFan</a></h5>
+                        <q>My man! My all time favourite movie!</q>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</div>
+
+<div id="bottom-bar">
+    <footer class="contentwrapper">
+        Contact: <a href="mailto:info@film.itu.dk">info@film.itu.dk</a>
+    </footer>
+</div>
+
+</body>
+</html>
