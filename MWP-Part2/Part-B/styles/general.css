@@ -265,3 +265,36 @@ nav a:hover {
     margin-top: 0px;
 }
 /**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles that alters general styles based on screen size. */
+
+@media screen and (max-width: 800px) {
+    .contentwrapper {
+        /* Extend page to full window width (i.e. do not use margins on smaller screens) */
+        width: 100%;
+    }
+
+    .sidebar {
+        /* Do not show the sidebar on smaller screens. */
+        display: none;
+    }
+
+    .main-content {
+        /* As the sidebar is not part of the site for smaller screens, extend the main-content to the entire width */
+        width: 100%;
+    }
+
+    #banner {
+        width: 100%;
+    }
+
+    #banner img {
+        width: 100%;
+    }
+}
+
+
+/**********************************************************************************************************************/
