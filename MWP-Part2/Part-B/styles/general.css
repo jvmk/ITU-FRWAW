@@ -7,6 +7,21 @@
 
 
 /**********************************************************************************************************************/
+/* Styles for creating visual elements, e.g. icons */
+.icon-bar {
+    /* Inspired by Bootstrap. */
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    border-bottom: 3px solid #404140;
+    margin-bottom: 1px;
+}
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
 /* Default styles for tags. Specifies the general/default look and feel of elements on the website. */
 body {
     font-family: Arial, Helvetica, sans-serif; /* Define default font for all elements */
@@ -14,6 +29,8 @@ body {
     background-color: #404140;
     margin: 0px;
     color: #404140;
+    /* Switch position from static to relative to allow absolute positioning of footer for smaller screens. */
+    position: relative;
 }
 
 p {
@@ -79,6 +96,20 @@ a:hover {
 
 #content {
     margin-top: 60px;  /* Offset content area according to the height of the top-bar */
+    overflow: hidden; /* Clearfix hack, make container extend to height of children. */
+}
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Classes that, combined with js, allows showing and hiding the navigation section on smaller screens */
+.collapsible-navigation-visible {
+    display: block;
+}
+
+.collapsible-navigation-hidden {
+    display: none;
 }
 /**********************************************************************************************************************/
 
@@ -116,6 +147,11 @@ a:hover {
     display: inline-block;
 }
 
+.header-rhs-collapse {
+    /* The header optimized for smaller screens is hidden on desktop sized screens. */
+    display: none;
+}
+
 nav a {
     /* Styles the navigation links in the navigation bar */
     text-decoration: none;
@@ -133,6 +169,16 @@ nav a.current-page {
 nav a:hover {
     color: white;
 }
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles for the collapsible navigation bar (optimized for mobile) */
+#navigation-small {
+    background-color: #D8D8D8;
+}
+
 /**********************************************************************************************************************/
 
 
@@ -271,8 +317,46 @@ nav a:hover {
 /**********************************************************************************************************************/
 /* Styles that alters general styles based on screen size. */
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
 
+
+    .header-rhs {
+        /* Hide the desktop navigation and login. */
+        display: none;
+    }
+
+    .header-rhs-collapse {
+        display: block;
+        overflow: hidden;
+        float: right;
+    }
+
+    .header-rhs-collapse .icon-bar:last-child {
+        /* Remove bottom margin for last stripe in menu icon in order not to mess up vertical alignment. */
+        margin-bottom: 0;
+    }
+
+    #btn-menu {
+        display: inline-block; /* vertically align menu button */
+        cursor: hand;
+    }
+
+    #top-bar {
+        /* Remove fixed positioning on smaller screens to conserve screen real estate on these devices. */
+        position: static;
+    }
+
+    #bottom-bar {
+        /* Remove fixed positioning on smaller screens to conserve screen real estate on these devices. */
+        position: absolute;
+        bottom: 0px;
+    }
+
+
+    #content {
+        /* As a result of no longer using fixed positioning for header and footer, we must reduce the margin of content section. */
+        margin-top: 0;
+    }
 
     /*.sidebar {*/
         /* Do not show the sidebar on smaller screens. */
@@ -289,11 +373,6 @@ nav a:hover {
 @media screen and (max-width: 960px) {
     /* Rules that apply when width is less than the minimum required width for optimal desktop viewing (960px) */
 
-    .header-rhs {
-        /* Hide the desktop navigation and login. */
-        display: none;
-    }
-
     .contentwrapper {
         /* Extend page to full window width (except small margins for visual pleasure) */
         width: 98%;
@@ -301,40 +380,8 @@ nav a:hover {
         margin-right: 1%;
     }
 
-    /*.main-content {*/
-        /*width: 63%;*/
-        /*margin-left: 1%;*/
-        /*margin-right: 1%;*/
-    /*}*/
-
-    /*.sidebar {*/
-        /*margin-right: 1%;*/
-    /*}*/
-
-    /*.header-rhs {*/
-        /*position: absolute;*/
-        /*right: 0;*/
-    /*}*/
-
-
-
-    /*.main-content, .sidebar {*/
-        /*margin-left: 1%;*/
-        /*margin-right: 1%;*/
-    /*}*/
-
-    /*.sidebar {*/
-        /*margin-right: 1%;*/
-    /*}*/
-
-    /*#banner {*/
-        /*width: 100%;*/
-    /*}*/
-
     #banner img {
         width: 100%;
     }
 }
-
-
 /**********************************************************************************************************************/

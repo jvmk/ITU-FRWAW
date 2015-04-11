@@ -28,8 +28,8 @@
       <file leaf-file-name="general.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Part-B/styles/general.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.04743083" vertical-offset="4416" max-vertical-offset="5175">
-              <caret line="292" column="50" selection-start-line="292" selection-start-column="50" selection-end-line="292" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.44262296" vertical-offset="5076" max-vertical-offset="5880">
+              <caret line="360" column="5" selection-start-line="360" selection-start-column="5" selection-end-line="360" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -38,9 +38,21 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Part-B/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="92.5" vertical-offset="2475" max-vertical-offset="3210">
-              <caret line="17" column="30" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="30" />
+            <state vertical-scroll-proportion="-23.125" vertical-offset="180" max-vertical-offset="3570">
+              <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navigation-small.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Part-B/scripts/navigation-small.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+              <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -59,10 +71,11 @@
         <option value="$PROJECT_DIR$/Part-A/styles/blogs.css" />
         <option value="$PROJECT_DIR$/Part-B/styles/general-small.css" />
         <option value="$PROJECT_DIR$/Part-A/scripts/jquery.ellipsis.js" />
-        <option value="$PROJECT_DIR$/Part-B/index.html" />
         <option value="$PROJECT_DIR$/Part-A/scripts/ellipsisonready.js" />
         <option value="$PROJECT_DIR$/Part-A/styles/general.css" />
         <option value="$PROJECT_DIR$/Part-A/index.html" />
+        <option value="$PROJECT_DIR$/Part-B/scripts/navigation-small.js" />
+        <option value="$PROJECT_DIR$/Part-B/index.html" />
         <option value="$PROJECT_DIR$/Part-B/styles/general.css" />
       </list>
     </option>
@@ -137,6 +150,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="styles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MWP-Part2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MWP-Part2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Part-B" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -416,18 +447,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Part-B/scripts/navigation-small.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Part-B/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="92.5" vertical-offset="2475" max-vertical-offset="3210">
-          <caret line="17" column="30" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="30" />
+        <state vertical-scroll-proportion="-23.125" vertical-offset="180" max-vertical-offset="3570">
+          <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Part-B/styles/general.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.04743083" vertical-offset="4416" max-vertical-offset="5175">
-          <caret line="292" column="50" selection-start-line="292" selection-start-column="50" selection-end-line="292" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.44262296" vertical-offset="5076" max-vertical-offset="5880">
+          <caret line="360" column="5" selection-start-line="360" selection-start-column="5" selection-end-line="360" selection-end-column="5" />
           <folding />
         </state>
       </provider>
