@@ -230,6 +230,11 @@ nav a {
     margin-right: 0px;
     position: relative;
     display: inline-block;
+    background-image: url("../images/the-dark-knight.jpg");
+    background-position: center;
+    height: 232px; /* Same height as background image */
+    width: 960px; /* Same width as background image */
+    overflow: hidden;
 }
 
 #banner-event {
@@ -244,12 +249,29 @@ nav a {
 
 #banner-event-title {
     font-size: 1.75em;
-    /*color: #CD2027;*/
+    color: #CD2027;
+}
+
+#banner-event-title:hover {
+    /* Does not seem to work as div link takes precedence :-( */
+    color: white;
 }
 
 #banner-event-date, #banner-event-location {
     color: white;
     font-size: 1.25em;
+}
+
+#banner>a>span {
+    /* Turns the banner div into a link. */
+    /* Courtesy of http://stackoverflow.com/a/3494108 */
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left: 0;
+
+    z-index: 1;
 }
 /**********************************************************************************************************************/
 
@@ -403,7 +425,7 @@ nav a {
         margin-right: 1%;
     }
 
-    #banner img {
+    #banner {
         width: 100%;
     }
 }
