@@ -152,32 +152,43 @@ a:hover {
     display: none;
 }
 
-nav a {
-    /* Styles the navigation links in the navigation bar */
-    text-decoration: none;
+.header-rhs nav a {
+    /* Styles the navigation links in the navigation bar for desktop */
     font-size: 1.25em;
-    font-weight: bolder;
     vertical-align: middle;
     margin-right: 20px;
     margin-left: 0px;
 }
 
+#navigation-small nav a {
+    /* Styles the navigation links in the navigation bar for mobile */
+    display: block;
+    font-size: 1.5em;
+    margin: 0.3em 0;
+    float: right;
+    clear: both;
+}
+
 nav a.current-page {
+    /* Current page is highlighted using same colour on both desktop and mobile. */
     color: #404140;
 }
 
 nav a:hover {
     color: white;
 }
-/**********************************************************************************************************************/
 
+nav a {
+    /* Use bolder font for any type of navigation link, i.e. both mobile and desktop */
+    font-weight: bolder;
 
-
-/**********************************************************************************************************************/
-/* Styles for the collapsible navigation bar (optimized for mobile) */
-#navigation-small {
-    background-color: #D8D8D8;
 }
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+
 
 /**********************************************************************************************************************/
 
@@ -352,10 +363,15 @@ nav a:hover {
         bottom: 0px;
     }
 
-
     #content {
         /* As a result of no longer using fixed positioning for header and footer, we must reduce the margin of content section. */
         margin-top: 0;
+    }
+
+    #navigation-small {
+        /* Styles for the collapsible navigation bar (the navigation bar that is optimized for mobile) */
+        background-color: #D8D8D8;
+        overflow: hidden;
     }
 
     /*.sidebar {*/
@@ -368,6 +384,13 @@ nav a:hover {
         /*width: 100%;*/
     /*}*/
 
+}
+
+@media screen and (min-width: 850px) {
+    #navigation-small {
+        /* Never show the collapsible menu on desktop. */
+        display: none;
+    }
 }
 
 @media screen and (max-width: 960px) {
