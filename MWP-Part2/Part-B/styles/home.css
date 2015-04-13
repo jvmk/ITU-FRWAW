@@ -46,3 +46,15 @@
     font-weight: bold;
 }
 /**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles that alters styles specific to the home (index) page based on screen size. */
+@media screen and (max-width: 600px) {
+    .main-content article > img {
+        /* Restyle image width on smaller screens to make it fit in container. */
+        width: 60%;
+    }
+}
+/**********************************************************************************************************************/
