@@ -135,7 +135,7 @@ div.screening-info span.crew-comment {
 
 /**********************************************************************************************************************/
 /* Styles that alters styles specific to the movies page based on screen size. */
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 768px) {
     div.screening-info img.poster {
         width: 30%;
     }
