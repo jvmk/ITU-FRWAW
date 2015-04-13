@@ -9,8 +9,11 @@
     <!-- Get jQuery from Google servers -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-    <!-- JS in charge of showing/hiding the navigation for small screens when the menu button is clicked. -->
-    <script src="scripts/navigation-small.js"></script>
+    <!-- Import general purpose JavaScript. -->
+    <script src="scripts/general.js"></script>
+
+    <!-- Import JavaScript specific to the home (index) page. -->
+    <script src="scripts/home.js"></script>
 
     <!-- TODO link to CDN that delivers HTML5 Shiv js to support older browsers which do not support HTML5 -->
 </head>
@@ -45,7 +48,7 @@
     </header> <!-- End navigation bar -->
 </div>
 
-<div id="navigation-small" class="collapsible-navigation-hidden">
+<div id="navigation-small" class="collapsed display-none-desktop">
     <!-- Navigation menu for smaller screens. Hidden on desktop screens. -->
     <nav class="contentwrapper">
         <a href="index.html" class="current-page">Home</a>
@@ -69,6 +72,23 @@
     </div> <!-- End promo banner -->
 
     <div class="main-content"> <!-- Main content leftmost part (2/3 of width) -->
+
+        <section id="login-small" class="display-none-desktop"> <!-- Login form for smaller screens (mobile) -->
+            <h1 class="box-header">Login
+                <!-- wrap the collapse/expand button in the header bar -->
+                <div id="btn-collapse-expand-login">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </div>
+            </h1>
+            <form method="post" class="collapsed">
+                <input type="email" name="email" placeholder="E-mail"/>
+                <input type="password" name="password" placeholder="Password"/>
+                <input type="submit" value="Sign in"/>
+            </form>
+        </section>
+
         <section>
             <h1 class="box-header">News</h1>
             <article>

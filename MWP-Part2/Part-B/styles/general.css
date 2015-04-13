@@ -17,6 +17,12 @@
     border-bottom: 3px solid #404140;
     margin-bottom: 1px;
 }
+
+div>.icon-bar:last-child {
+    /* Put a negative margin equal to element height on last stripe in order to vertically align element */
+    /* (as the first element takes up two pixels of empty space above its bottom-border as it must have a height) */
+    margin-bottom: -2px;
+}
 /**********************************************************************************************************************/
 
 
@@ -103,12 +109,12 @@ a:hover {
 
 
 /**********************************************************************************************************************/
-/* Classes that, combined with js, allows showing and hiding the navigation section on smaller screens */
-.collapsible-navigation-visible {
+/* Classes that, combined with js, allows collapsing and expanding elements on smaller screens */
+.expanded {
     display: block;
 }
 
-.collapsible-navigation-hidden {
+.collapsed {
     display: none;
 }
 /**********************************************************************************************************************/
@@ -364,11 +370,6 @@ nav a {
         float: right;
     }
 
-    .header-rhs-collapse .icon-bar:last-child {
-        /* Remove bottom margin for last stripe in menu icon in order not to mess up vertical alignment. */
-        margin-bottom: 0;
-    }
-
     #btn-menu {
         display: inline-block; /* vertically align menu button */
         cursor: hand;
@@ -396,23 +397,52 @@ nav a {
         overflow: hidden;
     }
 
-    /*.sidebar {*/
-        /* Do not show the sidebar on smaller screens. */
-        /*display: none;*/
-    /*}*/
+    /******************************************************************************************************************/
+    /* Styles for the login section for smaller screens */
+    #login-small {
+        display: block; /* Show the alternative login on smaller screens */
+    }
 
-    /*.main-content {*/
+    #login-small input {
+        /* Styles email, password and submit inputs of the login form. */
+        font-size: 1.5em;
+        width: 98%;
+        margin: 1%;
+        /* Use of CSS3 property 'box-sizing' keeps the input elements from expanding beyond the container on the rhs */
+        /* Courtesy of http://stackoverflow.com/a/628912/1214974 */
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+
+    #btn-collapse-expand-login {
+        vertical-align: middle;
+        display: inline-block;
+        /*overflow: hidden;*/
+        float: right;
+        clear: both;
+    }
+    /******************************************************************************************************************/
+
+    .sidebar {
+         /* Do not show the sidebar on smaller screens by default. */
+        display: none;
+    }
+
+    .main-content {
         /* As the sidebar is not part of the site for smaller screens, extend the main-content to the entire width */
-        /*width: 100%;*/
-    /*}*/
+        width: 100%;
+    }
 
 }
 
 @media screen and (min-width: 850px) {
-    #navigation-small {
-        /* Never show the collapsible menu on desktop. */
+
+    .display-none-desktop {
+        /* Class used when an element should be not be present on the desktop version of the site. */
         display: none;
     }
+
 }
 
 @media screen and (max-width: 960px) {
