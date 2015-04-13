@@ -94,7 +94,9 @@
                         <option value="2017">2017</option>
                         <option value="2018">2018</option>
                     </select>
-                    <input type="submit" value="Refresh"/>
+                    <!-- Remove submit button on smaller screens. -->
+                    <!-- Form should be submitted when either of the two DDLs is changed. -->
+                    <input type="submit" value="Refresh" class="display-none-mobile"/>
                 </form>
             </div>
             <div class="screening-info">

@@ -434,6 +434,10 @@ nav a {
         width: 100%;
     }
 
+    .display-none-mobile {
+        /* Class used when an element should be not be present on the mobile version of the site. */
+        display: none;
+    }
 }
 
 @media screen and (min-width: 850px) {

@@ -129,3 +129,26 @@ div.screening-info span.crew-comment {
     font-style: italic;
     margin: 0 0 1em 0;
 }
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles that alters styles specific to the movies page based on screen size. */
+@media screen and (max-width: 850px) {
+    div.screening-info img.poster {
+        width: 30%;
+    }
+
+    #schedule-search-tools select {
+        width: 48%;
+        margin-right: 2%;
+    }
+
+    #schedule-search-tools select:last-of-type {
+        /* Remove right margin on last DDL to align it with the rhs of its container and keep it on the same line. */
+        width: 48%;
+        margin-right: 0;
+    }
+}
+/**********************************************************************************************************************/
