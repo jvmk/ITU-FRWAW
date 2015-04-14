@@ -217,3 +217,17 @@
 }
 /**********************************************************************************************************************/
 
+
+
+/**********************************************************************************************************************/
+/* Styles that alters styles specific to the blogs page based on screen size. */
+@media screen and (max-width: 790px) {
+    .sidebar {
+        /* Overwrite the general rule that the sidebar is not present on the mobile version. */
+        /* We want the recent blogs as well as the search blogs functionality to appear on the mobile version as well.*/
+        display: block;
+        /* Extend width to 100%, making the sidebar stack below the main content on mobile. */
+        width: 100%;
+    }
+}
+/**********************************************************************************************************************/
