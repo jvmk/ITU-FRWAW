@@ -36,17 +36,18 @@
         </div>
         <!-- align the menu links and login to the right edge of the page -->
         <div class="header-rhs">
-            <nav>
-                <a href="index.html" class="current-page">Home</a>
-                <a href="movies.html">Movies</a>
-                <a href="blogs.html">Blogs</a>
-                <a href="">About</a>
-            </nav>
-            <form id="form-login">
-                <input type="email" name="email" placeholder="E-mail"/>
-                <input type="password" name="password" placeholder="Password"/>
-                <input type="submit" value="Sign in"/>
-            </form>
+            <?php wp_nav_menu(array('theme_location' => 'main-menu', 'container' => 'nav', 'container_class' => 'main-menu')); ?>
+<!--            <nav>-->
+<!--                <a href="index.html" class="current-page">Home</a>-->
+<!--                <a href="movies.html">Movies</a>-->
+<!--                <a href="blogs.html">Blogs</a>-->
+<!--                <a href="">About</a>-->
+<!--            </nav>-->
+<!--            <form id="form-login">-->
+<!--                <input type="email" name="email" placeholder="E-mail"/>-->
+<!--                <input type="password" name="password" placeholder="Password"/>-->
+<!--                <input type="submit" value="Sign in"/>-->
+<!--            </form>-->
         </div>
         <div class="header-rhs-collapse">
             <div id="btn-menu">

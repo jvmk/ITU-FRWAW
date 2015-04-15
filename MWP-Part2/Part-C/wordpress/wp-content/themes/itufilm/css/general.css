@@ -153,6 +153,11 @@ a:hover {
     display: inline-block;
 }
 
+.header-rhs nav li {
+    display: inline;
+    margin-right: 10px;
+}
+
 .header-rhs-collapse {
     /* The header optimized for smaller screens is hidden on desktop sized screens. */
     display: none;
@@ -175,7 +180,7 @@ a:hover {
     clear: both;
 }
 
-nav a.current-page {
+nav li.current_page_item>a {
     /* Current page is highlighted using same colour on both desktop and mobile. */
     color: #404140;
 }
