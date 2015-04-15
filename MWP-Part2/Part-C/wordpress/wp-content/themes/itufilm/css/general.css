@@ -1,0 +1,466 @@
+/**********************************************************************************************************************/
+/* This stylesheet contains general styles, i.e. styles that are shared by all pages.                                 */
+/**********************************************************************************************************************/
+
+/* note to self: http://designshack.net/articles/css/rolling-your-own-grid-layouts-on-the-fly-without-a-framework/ */
+
+
+
+/**********************************************************************************************************************/
+/* Styles for creating visual elements, e.g. icons */
+.icon-bar {
+    /* Inspired by Bootstrap. */
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    border-bottom: 3px solid #404140;
+    margin-bottom: 1px;
+}
+
+div>.icon-bar:last-child {
+    /* Put a negative margin equal to element height on last stripe in order to vertically align element */
+    /* (as the first element takes up two pixels of empty space above its bottom-border as it must have a height) */
+    margin-bottom: -2px;
+}
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Default styles for tags. Specifies the general/default look and feel of elements on the website. */
+body {
+    font-family: Arial, Helvetica, sans-serif; /* Define default font for all elements */
+    font-size: 0.9em;
+    background-color: #404140;
+    margin: 0px;
+    color: #404140;
+    /* Switch position from static to relative to allow absolute positioning of footer for smaller screens. */
+    position: relative;
+}
+
+p {
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
+}
+
+q {
+    font-style: italic;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.125em;
+}
+
+a {
+    /* Set style rules common to all links  on the page */
+    color: #CD2027; /* Red color of the ITU.film logo */
+    text-decoration: none;
+}
+
+a:hover {
+    /* Give visual feedback when user hovers a link. */
+    color: white;
+}
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles specifying the overall layout of the main content of the page */
+.contentwrapper {
+    /* Content wrapper. Horizontally aligns content and adds a width of 960px */
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-content {
+    /* Left part (column) of main content */
+    /* Takes up roughly two thirds of the width */
+    width: 64%;
+    margin-right: 3%;
+    float: left;
+}
+
+.sidebar {
+    /* Right part (column) of main content */
+    /* This is the smaller part of the main content */
+    /* Takes up roughly one third of the width */
+    width: 33%;
+    float: right;
+}
+
+.main-content section, .sidebar section {
+    /* Set default background-color for sections nested under main-content and sidebar */
+    background-color: #D8D8D8;
+}
+
+#content {
+    margin-top: 60px;  /* Offset content area according to the height of the top-bar */
+    overflow: hidden; /* Clearfix hack, make container extend to height of children. */
+}
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Classes that, combined with js, allows collapsing and expanding elements on smaller screens */
+.expanded {
+    display: block;
+}
+
+.collapsed {
+    display: none;
+}
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles for the top bar and its contained page header (which in turn contains the navigation bar) */
+#top-bar {
+    top: 0px;
+    box-shadow: 0px 2px 2px;
+    height: 60px;
+    line-height: 60px;
+}
+
+#top-bar header {
+    display: block;
+    overflow: hidden; /* Needed in order to avoid header being assigned a height of 0 */
+}
+
+.header-lhs {
+    float: left;
+}
+
+.header-lhs img {
+    width: 161px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.header-rhs {
+    float: right;
+}
+
+.header-rhs nav, .header-rhs form {
+    display: inline-block;
+}
+
+.header-rhs-collapse {
+    /* The header optimized for smaller screens is hidden on desktop sized screens. */
+    display: none;
+}
+
+.header-rhs nav a {
+    /* Styles the navigation links in the navigation bar for desktop */
+    font-size: 1.25em;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-left: 0px;
+}
+
+#navigation-small nav a {
+    /* Styles the navigation links in the navigation bar for mobile */
+    display: block;
+    font-size: 1.5em;
+    margin: 0.3em 0;
+    float: right;
+    clear: both;
+}
+
+nav a.current-page {
+    /* Current page is highlighted using same colour on both desktop and mobile. */
+    color: #404140;
+}
+
+nav a:hover {
+    color: white;
+}
+
+nav a {
+    /* Use bolder font for any type of navigation link, i.e. both mobile and desktop */
+    font-weight: bolder;
+
+}
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+
+
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles for the bottom bar */
+#bottom-bar {
+    bottom: 0px;
+    box-shadow: 0px -1px 2px;
+}
+#bottom-bar footer {
+    text-align: center;
+    font-size: 0.9em;
+}
+/**********************************************************************************************************************/
+
+
+
+
+/**********************************************************************************************************************/
+/* Styles common to both the top-bar and the bottom-bar */
+#top-bar, #bottom-bar {
+    width: 100%; /* Extend width to entire viewport */
+    background-color: #979797;
+    z-index: 100;  /* Make navigation bar and footer bar overlay all other elements. */
+    position: fixed; /* fixed position to keep header and footer visible at all times */
+}
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles for the promo banner. */
+#banner {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    position: relative;
+    display: inline-block;
+    background-image: url("../images/the-dark-knight.jpg");
+    background-position: center;
+    height: 232px; /* Same height as background image */
+    width: 960px; /* Same width as background image */
+    overflow: hidden;
+}
+
+#banner-event {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    display: inline;
+    text-align: right;
+    font-weight: bold;
+    float: right;
+}
+
+#banner-event-title {
+    font-size: 1.75em;
+    color: #CD2027;
+}
+
+#banner-event-title:hover {
+    /* Does not seem to work as div link takes precedence :-( */
+    color: white;
+}
+
+#banner-event-date, #banner-event-location {
+    color: white;
+    font-size: 1.25em;
+}
+
+#banner>a>span {
+    /* Turns the banner div into a link. */
+    /* Courtesy of http://stackoverflow.com/a/3494108 */
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left: 0;
+
+    z-index: 1;
+}
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles for elements in the main-content and the sidebar. */
+.main-content section, .sidebar section {
+    border: 2px solid #979797;
+    margin-bottom: 20px;
+}
+
+.main-content h1.box-header, .sidebar h1.box-header {
+    color: white;
+    background-color: #979797;
+    padding: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.sidebar .section-item {
+    background-color: #D8D8D8;
+    display: table-row;
+    font-size: 0.9em; /* Use smaller text for items in sidebar */
+}
+
+.sidebar .section-item .thumbnail {
+    /* Area of a sidebar section-item where an image can be displayed. */
+    padding: 10px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    border-bottom: 1px solid #979797;
+}
+
+.sidebar .section-item .thumbnail>.thumbnail-content-wrapper {
+    max-width: 72px;
+    max-height: 107px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0px;
+}
+
+.sidebar .section-item .thumbnail img {
+    width: 72px;
+    padding: 0px;
+    margin-bottom: 5px;
+}
+
+.sidebar .section-item .details {
+    /* Area of a sidebar section-item where written details can be provided. */
+    padding: 10px 10px 10px 0px;
+    margin: 0px;
+    display: table-cell;
+    vertical-align: middle;
+    border-bottom: 1px solid #979797;
+}
+
+.sidebar .section-item .details>.details-content-wrapper {
+    height: 107px;
+    overflow: scroll;
+}
+
+.sidebar .section-item .details>.details-content-wrapper h4 {
+    margin-bottom: 0.3em;
+}
+
+.sidebar .section-item .details *:first-child {
+    /* Remove any margin-top of first child to align it with thumbnail */
+    margin-top: 0px;
+}
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles that alters general styles based on screen size. */
+
+@media screen and (max-width: 790px) {
+
+
+    .header-rhs {
+        /* Hide the desktop navigation and login. */
+        display: none;
+    }
+
+    .header-rhs-collapse {
+        display: block;
+        overflow: hidden;
+        float: right;
+    }
+
+    #btn-menu {
+        display: inline-block; /* vertically align menu button */
+        cursor: hand;
+    }
+
+    #top-bar {
+        /* Remove fixed positioning on smaller screens to conserve screen real estate on these devices. */
+        position: static;
+    }
+
+    #bottom-bar {
+        /* Remove fixed positioning on smaller screens to conserve screen real estate on these devices. */
+        position: absolute;
+        bottom: 0px;
+    }
+
+    #content {
+        /* As a result of no longer using fixed positioning for header and footer, we must reduce the margin of content section. */
+        margin-top: 0;
+    }
+
+    #navigation-small {
+        /* Styles for the collapsible navigation bar (the navigation bar that is optimized for mobile) */
+        background-color: #D8D8D8;
+        overflow: hidden;
+    }
+
+    /******************************************************************************************************************/
+    /* Styles for the login section for smaller screens */
+    #login-small {
+        display: block; /* Show the alternative login on smaller screens */
+    }
+
+    #login-small input {
+        /* Styles email, password and submit inputs of the login form. */
+        font-size: 1.5em;
+        width: 98%;
+        margin: 1%;
+        /* Use of CSS3 property 'box-sizing' keeps the input elements from expanding beyond the container on the rhs */
+        /* Courtesy of http://stackoverflow.com/a/628912/1214974 */
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+
+    #btn-collapse-expand-login {
+        vertical-align: middle;
+        display: inline-block;
+        /*overflow: hidden;*/
+        float: right;
+        clear: both;
+    }
+    /******************************************************************************************************************/
+
+    .sidebar {
+         /* Do not show the sidebar on smaller screens by default. */
+        display: none;
+    }
+
+    .main-content {
+        /* As the sidebar is not part of the site for smaller screens, extend the main-content to the entire width */
+        width: 100%;
+    }
+
+    .display-none-mobile {
+        /* Class used when an element should be not be present on the mobile version of the site. */
+        display: none;
+    }
+}
+
+@media screen and (min-width: 790px) {
+
+    .display-none-desktop {
+        /* Class used when an element should be not be present on the desktop version of the site. */
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 960px) {
+    /* Rules that apply when width is less than the minimum required width for optimal desktop viewing (960px) */
+
+    .contentwrapper {
+        /* Extend page to full window width (except small margins for visual pleasure) */
+        width: 98%;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+    #banner {
+        width: 100%;
+    }
+}
+/**********************************************************************************************************************/
