@@ -13,41 +13,21 @@
             // Query args for fetching the featured screening.
             $featured_screening_query_args = array(
                 'post_type'			=> 'screening',
-                'posts_per_page'	=> 1,
-                'meta_key'			=> 'event_date',
-                'orderby'			=> 'meta_value',
-                'order'				=> 'ASC'
+                'orderby'           => 'event_date',
+                'order'             => 'ASC',
+                'limit'             => 1
             );
-            // Get featured screening.
-            $posts = get_posts($featured_screening_query_args);
-            foreach($posts as $post): ?>
-        #banner {
-            background-image: url("<?php echo get_custom_field('banner_img');?>");
-        }
-        <?php endforeach; ?>
+            // Run query.
+            $Q = new GetPostsQuery();
+            $featured_screenings = $Q->get_posts($featured_screening_query_args);
+            foreach ($featured_screenings as $screening): ?>
+            #banner {
+                background-image: url("<?php print CCTM::filter($screening["banner_img"], 'to_image_src')?>");
+            }
+            <?php endforeach?>
     </style>
 </head>
 <body <?php body_class(); ?>>
-<!--<div id="wrapper" class="hfeed">-->
-<!--    <header id="header" role="banner">-->
-<!--        <section id="branding">-->
-<!--            <div id="site-title">--><?php //if (!is_singular()) {
-//                    echo '<h1>';
-//                } ?><!--<a href="--><?php //echo esc_url(home_url('/')); ?><!--"-->
-<!--                       title="--><?php //esc_attr_e(get_bloginfo('name'), 'itufilm'); ?><!--"-->
-<!--                       rel="home">--><?php //echo esc_html(get_bloginfo('name')); ?><!--</a>--><?php //if (!is_singular()) {
-//                    echo '</h1>';
-//                } ?><!--</div>-->
-<!--            <div id="site-description">--><?php //bloginfo('description'); ?><!--</div>-->
-<!--        </section>-->
-<!--        <nav id="menu" role="navigation">-->
-<!--            <div id="search">-->
-<!--                --><?php //get_search_form(); ?>
-<!--            </div>-->
-<!--            --><?php //wp_nav_menu(array('theme_location' => 'main-menu')); ?>
-<!--        </nav>-->
-<!--    </header>-->
-<!--    <div id="container">-->
 
 <div id="top-bar">
     <header class="contentwrapper"> <!-- Begin navigation bar. Use of class constraints width to page width. -->
@@ -83,16 +63,15 @@
 
     <div id="banner"> <!-- Begin promo banner -->
         <?php
-        // Rerun featured screening query for safe measures (avoid errors from overwriting posts variable).
-        $posts = get_posts($featured_screening_query_args);
-        foreach($posts as $post):
+        // Print the event details in the featured screening banner.
+        foreach($featured_screenings as $screening):
         ?>
             <!-- Link that allows the user to click anywhere on the image background. -->
-            <a href="<?php echo get_permalink($post)?>" alt="Screening details"><span></span></a>
+            <a href="<?php echo $screening["permalink"]?>" alt="Screening details"><span></span></a>
             <div id="banner-event">
-                <span id="banner-event-title"><?php echo get_post_field('post_title', $post);?></span><br/>
-                <span id="banner-event-date"><?php echo get_custom_field('event_date');?></span><br/>
-                <span id="banner-event-location"><?php echo get_custom_field('location')?></span>
+                <span id="banner-event-title"><?php echo $screening["post_title"];?></span><br/>
+                <span id="banner-event-date"><?php echo $screening["event_date"];?></span><br/>
+                <span id="banner-event-location"><?php echo $screening["location"]?></span>
             </div>
         <?php endforeach; ?>
     </div> <!-- End promo banner -->

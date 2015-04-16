@@ -1,4 +1,16 @@
 <?php get_header(); ?>
+<p>THIS IS PAGE</p>
+<?php
+
+// Variables used by included script.
+$main_content_left_box_headings = array('News', 'Noobs', 'Pros');
+include(locate_template('partials/maincontentleft.php'));
+
+// Set the headings for boxes containing the main content on the front page.
+//global $main_content_left_box_headings;
+//$main_content_left_box_headings = array('News', 'Noobs', 'Pros');
+//get_template_part('partials/maincontentleft');
+?>
     <section>
         <h1 class="box-header">News</h1>
     </section>

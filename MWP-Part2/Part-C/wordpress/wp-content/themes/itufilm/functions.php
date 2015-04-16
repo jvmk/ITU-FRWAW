@@ -1,4 +1,5 @@
 <?php
+
 // Enqueue stylesheets
 add_action('wp_enqueue_scripts', 'load_styles');
 function load_styles() {
