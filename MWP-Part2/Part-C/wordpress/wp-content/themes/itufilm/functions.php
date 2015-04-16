@@ -13,7 +13,12 @@ function get_news_post_for_front_page( $query ) {
 // Enqueue stylesheets
 add_action('wp_enqueue_scripts', 'load_styles');
 function load_styles() {
+    // enqueue general styles (applies to all pages)
     wp_enqueue_style( 'general', get_template_directory_uri()."/css/general.css" );
+    // enqueue page specific styles
+    if (is_front_page()) {
+        wp_enqueue_style('index', get_template_directory_uri()."/css/index.css");
+    }
 }
 
 add_action('after_setup_theme', 'itufilm_setup');
