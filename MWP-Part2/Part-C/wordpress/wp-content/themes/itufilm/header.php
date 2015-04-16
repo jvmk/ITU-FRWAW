@@ -6,6 +6,26 @@
     <title><?php wp_title(' | ', true, 'right'); ?></title>
     <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>"/>
     <?php wp_head(); ?>
+    <style type="text/css">
+        /* Background image is added dynamically. */
+        /* Hence it cannot be set in stylesheets and must be added here using php. */
+        <?php
+            // Query args for fetching the featured screening.
+            $featured_screening_query_args = array(
+                'post_type'			=> 'screening',
+                'posts_per_page'	=> 1,
+                'meta_key'			=> 'event_date',
+                'orderby'			=> 'meta_value',
+                'order'				=> 'ASC'
+            );
+            // Get featured screening.
+            $posts = get_posts($featured_screening_query_args);
+            foreach($posts as $post): ?>
+        #banner {
+            background-image: url("<?php echo get_custom_field('banner_img');?>");
+        }
+        <?php endforeach; ?>
+    </style>
 </head>
 <body <?php body_class(); ?>>
 <!--<div id="wrapper" class="hfeed">-->
@@ -58,3 +78,21 @@
         </div>
     </header> <!-- End navigation bar -->
 </div>
+
+<div id="content" class="contentwrapper">
+
+    <div id="banner"> <!-- Begin promo banner -->
+        <?php
+        // Rerun featured screening query for safe measures (avoid errors from overwriting posts variable).
+        $posts = get_posts($featured_screening_query_args);
+        foreach($posts as $post):
+        ?>
+            <!-- Link that allows the user to click anywhere on the image background. -->
+            <a href="<?php echo get_permalink($post)?>" alt="Screening details"><span></span></a>
+            <div id="banner-event">
+                <span id="banner-event-title"><?php echo get_post_field('post_title', $post);?></span><br/>
+                <span id="banner-event-date"><?php echo get_custom_field('event_date');?></span><br/>
+                <span id="banner-event-location"><?php echo get_custom_field('location')?></span>
+            </div>
+        <?php endforeach; ?>
+    </div> <!-- End promo banner -->

@@ -241,7 +241,7 @@ nav a {
     margin-right: 0px;
     position: relative;
     display: inline-block;
-    background-image: url("../images/the-dark-knight.jpg");
+    /*background-image: url("../images/the-dark-knight.jpg");*/
     background-position: center;
     height: 232px; /* Same height as background image */
     width: 960px; /* Same width as background image */
