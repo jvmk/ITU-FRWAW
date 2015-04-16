@@ -349,6 +349,7 @@ nav a {
 
 .sidebar .section-item .details>.details-content-wrapper h4 {
     margin-bottom: 0.3em;
+    font-weight: bold;
 }
 
 .sidebar .section-item .details *:first-child {

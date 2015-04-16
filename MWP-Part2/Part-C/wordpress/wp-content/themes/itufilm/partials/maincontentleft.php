@@ -21,7 +21,7 @@
 
         <?php
         // Lookup (by key) wp query containing the posts to display in this section.
-        $query = $box["posts"];
+        $query = $box["query"];
         if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
             <?php
             // What kind of post is this?
