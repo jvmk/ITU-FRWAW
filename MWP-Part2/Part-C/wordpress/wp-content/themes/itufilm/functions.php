@@ -1,5 +1,15 @@
 <?php
 
+// Update the default query for the front page to fetch news posts instead of standard WP posts.
+add_action( 'pre_get_posts', 'get_news_post_for_front_page' );
+function get_news_post_for_front_page( $query ) {
+
+    if( is_front_page() && $query->is_main_query() ) {
+        $query->query_vars['post_type'] = 'news_post';
+    }
+
+}
+
 // Enqueue stylesheets
 add_action('wp_enqueue_scripts', 'load_styles');
 function load_styles() {

@@ -8,12 +8,7 @@ $main_content_left_boxes = array(
     // Tuple containing the box heading and arguments for fetching the posts to be displayed in the box.
     array(
         'heading' => 'News',
-        'posts' => $wp_query // Use standard wordpress posts as news for index page.
-//        'post_query_args' => array(
-//            'post_type' => 'news_post',
-//            'posts_per_page' => 5,
-
-//        )
+        'posts' => $wp_query // Use posts from the main query (which is altered in functions.php for index.php).
     )
 );
 include(locate_template('partials/maincontentleft.php'));
