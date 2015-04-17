@@ -1,0 +1,155 @@
+/**********************************************************************************************************************/
+/* This stylesheet contains styles specific to the movies page, i.e. movies.html.                                     */
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles for the user controls that filters the screenings schedule */
+#schedule-search-tools select {
+    font-size: 1.5em;
+    /*width: 7em;*/
+    width: 30%;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+#schedule-search-tools input[type="submit"] {
+    font-size: 1.5em;
+    font-weight: bold;
+    float: right;
+}
+
+#schedule-search-tools {
+    padding: 20px 20px 5px 20px;
+}
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles that define the look and layout of information related to a (single) screening */
+
+div.screening-info {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #979797;
+}
+
+div.screening-info img.poster {
+    width: 250px;
+    float: left;
+    margin-right: 10px;
+}
+
+div.screening-info h1 {
+    margin-top: 0px;
+    margin-bottom: 0.3em;
+    font-weight: bold;
+}
+
+div.screening-info:after {
+    /* Clearfix (make container extend to match the height of its contents) */
+    /* Courtesy of http://stackoverflow.com/a/1633170/1214974 */
+    content: "";
+    display: table;
+    clear: both;
+}
+
+div.screening-info ul.time-and-place-listing {
+    list-style: none; /* Remove bullet points. */
+    font-size: 1.2em;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+div.screening-info ul.time-and-place-listing>li>span {
+    font-weight: bold; /* Display time and place in bold */
+}
+
+div.screening-info span.crew-comment {
+    font-size: 1.2em;
+    font-style: italic;
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.main-content section div.screening-info:last-child {
+    border-bottom: none; /* Remove border for last child to avoid double border at the end of the section */
+}
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles for the Recommendations sidebar */
+
+#recommendations-filter {
+    padding: 10px;
+    border-bottom: 2px solid #979797;
+}
+
+#recommendations-filter select {
+    width: 100%;
+    font-size: 1.5em;
+}
+
+#recommendations-filter input[type="submit"] {
+    font-size: 1.5em;
+    float: right;
+}
+
+#recommendations-filter:after {
+    /* Clearfix (make container extend to match the height of its contents) */
+    /* Courtesy of http://stackoverflow.com/a/1633170/1214974 */
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#recommendations-filter .filtering-item >span {
+    font-weight: bold;
+    float: left;
+}
+
+#recommendations-filter .filtering-item {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    text-align: right;
+}
+
+.sidebar .section-item .details>.details-content-wrapper h5 {
+    /* Style the text that provides information about who recommended this movie */
+    font-size: 1em; /* Make heading same size as regular text */
+    font-weight: normal;
+    font-style: italic;
+    margin: 0 0 1em 0;
+}
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles that alters styles specific to the movies page based on screen size. */
+@media screen and (max-width: 790px) {
+    div.screening-info img.poster {
+        width: 30%;
+    }
+
+    #schedule-search-tools select {
+        width: 48%;
+        margin-right: 2%;
+    }
+
+    #schedule-search-tools select:last-of-type {
+        /* Remove right margin on last DDL to align it with the rhs of its container and keep it on the same line. */
+        width: 48%;
+        margin-right: 0;
+    }
+}
+/**********************************************************************************************************************/

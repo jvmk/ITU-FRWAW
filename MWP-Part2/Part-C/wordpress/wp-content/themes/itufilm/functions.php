@@ -1,13 +1,16 @@
 <?php
 
-// Update the default query for the front page to fetch news posts instead of standard WP posts.
-add_action( 'pre_get_posts', 'get_news_post_for_front_page' );
-function get_news_post_for_front_page( $query ) {
+add_action( 'pre_get_posts', 'setup_main_query' );
+/**
+ * Alters the main query to fetch specific posts types for specific pages.
+ * @param $query the current wp query
+ */
+function setup_main_query( $query ) {
 
     if( is_front_page() && $query->is_main_query() ) {
+        // Update the default query for the front page to fetch news posts instead of standard WP posts.
         $query->query_vars['post_type'] = 'news_post';
     }
-
 }
 
 // Enqueue stylesheets
@@ -17,7 +20,12 @@ function load_styles() {
     wp_enqueue_style( 'general', get_template_directory_uri()."/css/general.css" );
     // enqueue page specific styles
     if (is_front_page()) {
+        // index / home page styles
         wp_enqueue_style('index', get_template_directory_uri()."/css/index.css");
+    }
+    if (is_page('movies')) {
+        // movies page styles
+        wp_enqueue_style('movies', get_template_directory_uri()."/css/movies.css");
     }
 }
 
