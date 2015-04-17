@@ -235,5 +235,21 @@
         /* Extend width to 100%, making the sidebar stack below the main content on mobile. */
         width: 100%;
     }
+    /* Optimize author block for screens with limited width. */
+    .main-content article>div.author-block {
+        display: block;
+        width: 90%;
+        max-width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+        float: none;
+    }
+    .main-content article>h1 {
+        display: block;
+        max-width: 100%;
+        width: 100%;
+        float: none;
+    }
+
 }
 /**********************************************************************************************************************/
