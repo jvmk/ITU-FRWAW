@@ -27,6 +27,12 @@ function load_styles() {
         // movies page styles
         wp_enqueue_style('movies', get_template_directory_uri()."/css/movies.css");
     }
+    if (is_page('about')) {
+        // use index styles for styling lhs main content on the about page
+        wp_enqueue_style('index', get_template_directory_uri()."/css/index.css");
+        // add extra styles specific to about (overwriting default styles for the sidebar)
+        wp_enqueue_style('about', get_template_directory_uri()."/css/about.css");
+    }
 }
 
 add_action('after_setup_theme', 'itufilm_setup');

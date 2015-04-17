@@ -1,0 +1,37 @@
+/**********************************************************************************************************************/
+/* This stylesheet contains styles specific to the about page, i.e. about.html.                                       */
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* This page uses a different structure for items in the sidebar boxes. */
+/* Add styles for new classes. */
+.partner-logo-wrapper {
+    padding: 2%;
+    width: 96%;
+}
+.partner-logo-wrapper img {
+    width: 100%;
+    height: auto;
+}
+.partner-info-wrapper {
+    padding: 0px 10px 10px 10px;
+}
+.partner-info-wrapper h4 {
+    margin-bottom: 0.3em;
+    font-weight: bold;
+}
+
+/* Overwrite the default sidebar styles in order to match new structure */
+.sidebar .section-item {
+    display: block;
+    border-bottom: 2px solid #979797;
+}
+
+.sidebar .section-item:last-child {
+    /* Remove border on last element to avoid double border at bottom of sidebar box */
+    border: none;
+}
+/**********************************************************************************************************************/
+
