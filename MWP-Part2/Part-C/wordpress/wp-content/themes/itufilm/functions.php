@@ -33,6 +33,18 @@ function load_styles() {
         // add extra styles specific to about (overwriting default styles for the sidebar)
         wp_enqueue_style('about', get_template_directory_uri()."/css/about.css");
     }
+    if (is_singular('screening')) {
+        // use styles from movies page to style single screening post.
+        wp_enqueue_style('movies', get_template_directory_uri()."/css/movies.css");
+        // apply specific styles that alters the general and movies styles slightly.
+        wp_enqueue_style('single-screening', get_template_directory_uri()."/css/single-screening.css");
+    }
+}
+
+// Disable the wordpress action bar as it gets in the way due to my use of a fixed position header.
+add_action('after_setup_theme', 'remove_admin_bar');
+function remove_admin_bar() {
+    show_admin_bar(false);
 }
 
 add_action('after_setup_theme', 'itufilm_setup');
