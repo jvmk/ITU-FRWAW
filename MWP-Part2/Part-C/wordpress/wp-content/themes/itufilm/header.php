@@ -36,13 +36,7 @@
         </div>
         <!-- align the menu links and login to the right edge of the page -->
         <div class="header-rhs">
-            <?php wp_nav_menu(array('theme_location' => 'main-menu', 'container' => 'nav', 'container_class' => 'main-menu')); ?>
-<!--            <nav>-->
-<!--                <a href="index.html" class="current-page">Home</a>-->
-<!--                <a href="movies.html">Movies</a>-->
-<!--                <a href="blogs.html">Blogs</a>-->
-<!--                <a href="">About</a>-->
-<!--            </nav>-->
+            <?php wp_nav_menu(array('theme_location' => 'main-menu', 'container' => 'nav', 'container_class' => 'main-menu collapsed')); ?>
 <!--            <form id="form-login">-->
 <!--                <input type="email" name="email" placeholder="E-mail"/>-->
 <!--                <input type="password" name="password" placeholder="Password"/>-->

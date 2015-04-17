@@ -70,6 +70,7 @@ add_action('wp_enqueue_scripts', 'itufilm_load_scripts');
 function itufilm_load_scripts()
 {
     wp_enqueue_script('jquery');
+    wp_enqueue_script('general', get_template_directory_uri() . '/js/general.js', array('jquery'), null, false);
 }
 
 add_action('comment_form_before', 'itufilm_enqueue_comment_reply_script');

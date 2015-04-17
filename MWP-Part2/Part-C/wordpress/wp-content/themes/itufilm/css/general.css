@@ -136,7 +136,7 @@ a:hover {
 
 #top-bar header {
     display: block;
-    overflow: hidden; /* Needed in order to avoid header being assigned a height of 0 */
+    height: 60px;
 }
 
 .header-lhs {
@@ -371,12 +371,6 @@ nav a {
 
 @media screen and (max-width: 790px) {
 
-
-    .header-rhs {
-        /* Hide the desktop navigation and login. */
-        display: none;
-    }
-
     .header-rhs-collapse {
         display: block;
         overflow: hidden;
@@ -386,6 +380,7 @@ nav a {
     #btn-menu {
         display: inline-block; /* vertically align menu button */
         cursor: hand;
+        clear: both;
     }
 
     #top-bar {
@@ -408,6 +403,36 @@ nav a {
         /* Styles for the collapsible navigation bar (the navigation bar that is optimized for mobile) */
         background-color: #D8D8D8;
         overflow: hidden;
+    }
+
+    nav.main-menu.collapsed {
+        display: none;
+    }
+
+    nav.main-menu.expanded {
+        position: absolute;
+        top: 62px; /* Leave a slight spacing between the top bar and the menu to show the topbars shadow effect */
+        left: 0;
+        display: block;
+        z-index: 50;
+        background-color: #D8D8D8;
+        width: 100%;
+    }
+
+    nav.main-menu.expanded li {
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        line-height: 1em;
+        float: right;
+        clear: right;
+        font-size: 1.35em;
+    }
+
+    nav.main-menu.expanded {
+        /* Add a bit of shadow to give the feel that the element resides on top of other elements. */
+        -webkit-box-shadow: 0 5px 5px 1px rgba(0,0,0,0.8);
+        box-shadow: 0 5px 5px 1px rgba(0,0,0,0.8);
     }
 
     /******************************************************************************************************************/
