@@ -49,6 +49,12 @@ function load_styles() {
         // apply general purpose single post specific styles
         wp_enqueue_style('single', get_template_directory_uri()."/css/single.css");
     }
+    if (is_singular('movie_blog_post')) {
+        // use styles from blogs page to style single movie blog post page.
+        wp_enqueue_style('blogs', get_template_directory_uri()."/css/blogs.css");
+        // apply general purpose single post specific styles
+        wp_enqueue_style('single', get_template_directory_uri()."/css/single.css");
+    }
 }
 
 // Disable the wordpress action bar as it gets in the way due to my use of a fixed position header.
