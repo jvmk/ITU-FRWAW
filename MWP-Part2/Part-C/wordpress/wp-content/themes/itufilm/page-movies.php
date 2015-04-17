@@ -7,9 +7,6 @@ Template Name: Movies
 <?php get_header(); ?>
 <?php
 
-// Set the headings and populates content for boxes containing the main (left hand side) content area.
-// Array of arrays facilitates the ability to have multiple content boxes.
-
 // Update the main query to fetch screenings.
 // Inspired by "Example Using Custom Post Types" here: https://codex.wordpress.org/Page_Templates
 $args = array (
@@ -32,7 +29,8 @@ $args = array (
 $temp = $wp_query; // assign ordinal query to temp variable for later use
 $wp_query = null;
 $wp_query = new WP_Query($args);
-
+// Set the headings and populates content for boxes containing the main (left hand side) content area.
+// Array of arrays facilitates the ability to have multiple content boxes.
 $main_content_left_boxes = array(
     // Tuple containing the box heading and a query that defines the posts to be displayed in the box.
     array(

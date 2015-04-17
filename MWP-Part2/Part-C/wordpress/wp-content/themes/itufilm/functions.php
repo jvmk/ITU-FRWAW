@@ -33,6 +33,10 @@ function load_styles() {
         // add extra styles specific to about (overwriting default styles for the sidebar)
         wp_enqueue_style('about', get_template_directory_uri()."/css/about.css");
     }
+    if(is_page('blogs')) {
+        // add extra styles specific to blogs page
+        wp_enqueue_style('blogs', get_template_directory_uri()."/css/blogs.css");
+    }
     if (is_singular('screening')) {
         // use styles from movies page to style single screening post.
         wp_enqueue_style('movies', get_template_directory_uri()."/css/movies.css");

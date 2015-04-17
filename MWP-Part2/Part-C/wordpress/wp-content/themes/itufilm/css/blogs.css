@@ -1,0 +1,239 @@
+/**********************************************************************************************************************/
+/* This stylesheet contains styles specific to the blogs page, i.e. blogs.html.                                       */
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles for the main part of a blog post, i.e. the actual post and blogger bio */
+
+.main-content article {
+    padding: 20px;
+    overflow: hidden; /* Hack to extend height to match child divs */
+}
+
+.main-content article>h1 {
+    margin-top: 0px;
+    margin-bottom: 0.5em;
+    float: left;
+    max-width: 45%; /* Constrain width such that heading and author-block won't stack */
+    font-weight: bold;
+}
+
+.main-content article>div.author-block {
+    border-top: 1px solid #979797;
+    border-bottom: 1px solid #979797;
+    padding: 1em 1.7em 1em 1.7em;
+    float: right;
+    max-width: 45%; /* Constrain width such that heading and author-block won't stack */
+    font-size: 0.9em;
+    margin: 0 0 1em 1em;
+}
+
+.main-content article>div.author-block>div.author-profile-picture {
+    width: 72px;
+    float: right;
+}
+
+.main-content article>div.author-block>div.author-profile-picture>img {
+    width: 72px;
+}
+
+.main-content article>div.author-block>div.author-data {
+    overflow: hidden;
+    width: auto;
+}
+
+.main-content article>div.author-block>div.author-data>ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0 0.5em 0 0;
+    overflow: hidden;
+}
+
+.main-content article>div.author-block>div.author-data>ul>li {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+
+.main-content article>div.author-block>div.author-data>ul>li:first-child {
+    /* Create small gap between blogger's username and the blogger's personal information */
+    margin-bottom: 0.5em;
+}
+
+.main-content article>div.author-block>div.author-data>ul>li>span {
+    font-weight: bold;
+}
+
+.main-content article>p {
+    clear: left; /* Do not let article text flow around article heading. */
+    text-align: justify;
+}
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles for the comments section of a blog post */
+.comments-block>.comment {
+    background-color: #979797;
+    padding: 1em;
+    margin-bottom: 1.25em;
+    overflow: hidden; /* Hack to extend height to match child divs */
+}
+
+.comments-block>.comment:last-child {
+    /* Remove bottom margin for last comment */
+    margin-bottom: 0;
+}
+
+.comments-block>.comment>.comment-user {
+    width: 100px;
+    max-width: 100px;
+    margin-right: 1em;
+    font-size: 0.8em;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    float: left;
+}
+
+.comments-block>.comment>.comment-user>img {
+    width: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comments-block>.comment>.comment-text {
+    background-color: #D8D8D8;
+    padding: 0.5em;
+    overflow: hidden;
+}
+
+.comments-block>.comment>.comment-text h6 {
+    margin: 0 0 1em 0;
+    text-align: right;
+}
+
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles for the rating section of a blog post */
+.rating-block {
+    clear: both;
+    overflow:hidden;
+}
+.rating-block form>span {
+    display: block;
+}
+
+.rating-block .rate-post-block {
+    float: left;
+}
+
+.rating-block .avg-rating-block {
+    float: right;
+}
+
+.rating-block .avg-rating-block:after {
+    /* Clearfix (make container extend to match the height of its contents) */
+    /* Courtesy of http://stackoverflow.com/a/1633170/1214974 */
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.rating-block h4 {
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}
+
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles for the "Top Bloggers" section of the sidebar */
+
+#top-bloggers .top3 {
+    padding: 10px 10px 0 10px;
+}
+
+#top-bloggers .top3:last-child {
+    /* Add bottom padding to last child */
+    padding: 10px 10px 10px 10px
+}
+
+#top-bloggers table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #979797;
+}
+
+#top-bloggers table>caption {
+    color: white;
+    background-color: #979797;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.1em;
+    caption-side: top;
+}
+
+#top-bloggers table td, #top-bloggers table th {
+    /*border: 1px solid #979797;*/
+}
+
+#top-bloggers table th:nth-child(even), #top-bloggers table td:nth-child(even) {
+    text-align: right;
+}
+
+#top-bloggers table th:nth-child(odd), #top-bloggers table td:nth-child(odd) {
+    text-align: left;
+}
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles for the "Search Blogs" section of the sidebar */
+
+#blog-search form {
+    overflow: hidden;
+    padding: 10px;
+}
+
+#blog-search form span {
+    display: block;
+    overflow: hidden;
+    padding-right: 1em;
+}
+
+#blog-search form input[type="submit"] {
+    font-size: 1.5em;
+    float: right;
+    /*overflow: hidden;*/
+
+}
+#blog-search form input[type="text"] {
+    font-size: 1em;
+    width: 100%;
+}
+/**********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************/
+/* Styles that alters styles specific to the blogs page based on screen size. */
+@media screen and (max-width: 790px) {
+    .sidebar {
+        /* Overwrite the general rule that the sidebar is not present on the mobile version. */
+        /* We want the recent blogs as well as the search blogs functionality to appear on the mobile version as well.*/
+        display: block;
+        /* Extend width to 100%, making the sidebar stack below the main content on mobile. */
+        width: 100%;
+    }
+}
+/**********************************************************************************************************************/
