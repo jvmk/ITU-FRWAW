@@ -26,12 +26,28 @@ $upcoming_screenings_query_args = array(
 );
 $upcoming_screenings_query = new GetPostsQuery();
 $upcoming_screenings = $upcoming_screenings_query->get_posts($upcoming_screenings_query_args);
+
+// Second build a query for the most recent blogs.
+$recent_blogs_query_args = array(
+    'post_type'			=> 'movie_blog_post',
+    'limit'             => 3 // use default ordering (newest blog post first)
+);
+$recent_blogs_query = new GetPostsQuery();
+$recent_blogs = $recent_blogs_query->get_posts($recent_blogs_query_args);
+
+// Send the two queries to the template that outputs their results.
 $rhs_content_boxes = array(
     array(
         'heading' => 'Upcoming Screenings',
         'items' => $upcoming_screenings
+    ),
+    array(
+        'heading' => 'Recent Blogs',
+        'items' => $recent_blogs
     )
 );
 include(locate_template('partials/rhs-content.php'));
+
 ?>
+
 <?php get_footer(); ?>
