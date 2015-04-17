@@ -102,7 +102,12 @@ a:hover {
 
 #content {
     margin-top: 60px;  /* Offset content area according to the height of the top-bar */
-    overflow: hidden; /* Clearfix hack, make container extend to height of children. */
+}
+
+#content>div>section, #banner {
+    /* Apply slight border to container boxes and banner. */
+    -webkit-box-shadow: 0 0 5px 1px rgba(0,0,0,0.6);
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.6);
 }
 /**********************************************************************************************************************/
 
@@ -227,8 +232,8 @@ nav a {
     z-index: 100;  /* Make navigation bar and footer bar overlay all other elements. */
     position: fixed; /* fixed position to keep header and footer visible at all times */
     /* Add a shadow effect to give the notion that elements float above other elements. */
-    -webkit-box-shadow: 0 0 10px 2px rgba(0,0,0,0.8);
-    box-shadow: 0 0 10px 2px rgba(0,0,0,0.8);
+    -webkit-box-shadow: 0 0 10px 1px rgba(0,0,0,0.8);
+    box-shadow: 0 0 10px 1px rgba(0,0,0,0.8);
 }
 /**********************************************************************************************************************/
 
