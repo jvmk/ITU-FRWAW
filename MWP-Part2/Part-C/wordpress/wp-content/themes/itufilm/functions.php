@@ -36,8 +36,14 @@ function load_styles() {
     if (is_singular('screening')) {
         // use styles from movies page to style single screening post.
         wp_enqueue_style('movies', get_template_directory_uri()."/css/movies.css");
-        // apply specific styles that alters the general and movies styles slightly.
-        wp_enqueue_style('single-screening', get_template_directory_uri()."/css/single-screening.css");
+        // apply general purpose single post specific styles
+        wp_enqueue_style('single', get_template_directory_uri()."/css/single.css");
+    }
+    if (is_singular('news_post')) {
+        // use styles from index page to style single news_post page.
+        wp_enqueue_style('index', get_template_directory_uri()."/css/index.css");
+        // apply general purpose single post specific styles
+        wp_enqueue_style('single', get_template_directory_uri()."/css/single.css");
     }
 }
 

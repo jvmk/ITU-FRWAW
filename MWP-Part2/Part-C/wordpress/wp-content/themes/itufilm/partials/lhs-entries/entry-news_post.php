@@ -1,14 +1,28 @@
 <?php
 /**
- * Created by PhpStorm.
+ * Handles display of a single news item in the 'News' section of the front page.
  * User: varmarken
  * Date: 16/04/15
  * Time: 18:11
  */
 ?>
 <article>
+
     <h1>
-        <?php echo get_the_title($post_entry);?>
+        <?php
+        // Get the permalink for this news_post.
+        $post_entry_permalink = "";
+        if(is_array($post_entry)) {
+            // CCTM query item.
+            // Must use filter.
+            $post_entry_permalink = CCTM::filter($post_entry["ID"], 'to_link_href');
+        } else {
+            // Main loop query item.
+            // Simply get permalink from current item.
+            $post_entry_permalink = get_post_permalink();
+        }
+        ?>
+        <a href="<?php echo $post_entry_permalink;?>"><?php echo get_the_title($post_entry);?></a>
     </h1>
     <?php
     // Get the url for the image for the news post.

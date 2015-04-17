@@ -1,13 +1,12 @@
 /**********************************************************************************************************************/
-/* This stylesheet contains styles specific to the display of a single screening, i.e. styles specific to             */
-/* single-screening.php                                                                                               */
+/* This stylesheet contains styles specific to the display of a single post of any type.                              */
 /**********************************************************************************************************************/
 
 
 
 /**********************************************************************************************************************/
 .main-content {
-    /* Sidebar is not used for single-screening page. Hence we can extend the main content to use the full width. */
+    /* Sidebar is not used for single post page. Hence we can extend the main content to use the full width. */
     width: 100%;
     margin-right: auto;
     margin-left: auto;
