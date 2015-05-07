@@ -1,0 +1,55 @@
+/* Styles for the index.html */
+
+/* Style images returned from the flickr search */
+#search-results-container img {
+    /*width: 50%;*/
+    /*height: auto;*/
+    /*max-width: 100%;*/
+    /*-ms-transform: scale(0.5, 0.5);  *//* IE 9 */
+    /*-webkit-transform: scale(0.5, 0.5);  *//* Safari */
+    /*transform: scale(0.5, 0.5);*/
+}
+
+/*#search-results-container img:hover {*/
+    /*-ms-transform: scale(1, 1);  *//* IE 9 */
+    /*-webkit-transform: scale(1, 1);  *//* Safari */
+    /*transform: scale(1, 1);*/
+/*}*/
+
+#search-results-container {
+    vertical-align: middle;
+}
+
+
+#search-results-container span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 320px;
+}
+
+#search-results-container span>img {
+    width: 50%;
+    height: auto;
+    vertical-align: middle;
+    transition: width 0.5s;
+}
+
+#search-results-container span>img:hover {
+    width: 100%;
+}
+
+div.grid-item {
+    width: 320px;
+    height: 320px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+    display: inline-block;
+    overflow: hidden;
+    text-align: center; /* Center nested inline-block container (i.e. the span element) of image */
+    /*vertical-align: middle;*/
+}
+
+div.grid-item > * {
+    vertical-align: middle;
+}

@@ -19,8 +19,8 @@ $(document).on('submit', '#formSearchFlickr', function(e) {
         // Create a new element to display every image.
         $.each(data.photos.photo, function(i, photo) {
             var imgUrl = 'http://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_n.jpg';
-
-            $('#content').append($('<img>',{src: imgUrl}));
+            var item = '<div class="grid-item"><span><img src="' +imgUrl + '"></span></div>'
+            $('#search-results-container').append(item);
             //// Pre-cache image
             //$('<img />').attr({'src': imgUrl, 'data-image-num': i}).load(function() {
             //    console.log('image loaded');
