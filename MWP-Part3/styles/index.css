@@ -34,6 +34,26 @@
     transition: width 0.5s;
 }
 
+@keyframes slide-in {
+    from { top: -200px; }
+    to { top: 0px; }
+}
+
+@-webkit-keyframes slide-in {
+    from { top: -200px; }
+    to { top: 0px; }
+}
+
+.sliding {
+    position: relative;
+    animation-name: slide-in;
+    -webkit-animation-name: slide-in;
+    -moz-animation-name: slide-in;
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+}
+
 #search-results-container span>img:hover {
     width: 100%;
 }
