@@ -16,24 +16,33 @@ $(document).on('submit', '#formSearchFlickr', function(e) {
     // fetch the search term.
     var searchTerm = $('#inputSearchTerm').val();
     searchFlickr(searchTerm, 10, photoPagesRequested, function(data) {
-        // Create a new element to display every image.
+        // Create a new element to display each image.
         $.each(data.photos.photo, function(i, photo) {
             // Build the URL for the image.
             var $imgUrl = 'http://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_n.jpg';
             var $image = $('<img/>', { src: $imgUrl });
-            var $back = $('<div/>', { class: 'back', text: 'This is the back of the image.' });
+            var $back = $('<div/>', { class: 'map' });
+            $back.css('width', '100%');
+            $back.css('height', '100%');
             // Create flipping image.
             var $flipper = createFlipper($image, $back);
             // TODO settle on background.
-            $back.parent().css('background-color', 'red');
+            $back.parent().css('background-color', 'black');
             // Image height and width is first available when image has loaded.
             $image.load(function(e) {
                 // Set width and height of container based on size of image.
                 $flipper.css('width', $(this).width());
                 $flipper.css('height', $(this).height());
+
+                // Create map element and append to back element.
+                // TODO move this outside load function?
+                var mapOptions = {
+                    center: { lat: -34.397, lng: 150.644},
+                    zoom: 8
+                };
+                var map = new google.maps.Map($back[0], mapOptions);
             });
             $('#search-results-container').append($flipper);
-
         });
     });
     photoPagesRequested++;
