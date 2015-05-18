@@ -1,0 +1,39 @@
+/**********************************************************************************************************************/
+/* CSS3 for flipping an element in order to display content residing on its back side. */
+.flipper-container {
+    perspective: 1000px;
+    /* Specify width and height so that div does not collapse.*/
+    width: 500px;
+    height: 500px;
+}
+
+.flipper, .flipper-front, .flipper-back {
+    height: 100%;
+    width: 100%;
+}
+
+.flipper-container:hover .flipper {
+    transform: rotateY(180deg);
+}
+
+.flipper {
+    transition: all 1.0s linear;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+.flipper-front, .flipper-back {
+    /* Hide side facing away from screen. */
+    backface-visibility: hidden;
+
+    /* Place front on back on top of each other (in 2D space) */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.flipper-back {
+    /* Initially hidden. */
+    transform: rotateY(180deg);
+}
+/**********************************************************************************************************************/

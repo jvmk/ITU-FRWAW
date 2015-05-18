@@ -18,18 +18,47 @@ $(document).on('submit', '#formSearchFlickr', function(e) {
     searchFlickr(searchTerm, 10, photoPagesRequested, function(data) {
         // Create a new element to display every image.
         $.each(data.photos.photo, function(i, photo) {
-            var imgUrl = 'http://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_n.jpg';
-            var item = '<div class="grid-item"><span><img src="' +imgUrl + '"></span></div>';
-            $('#search-results-container').append(item);
-            $('#search-results-container > *').addClass('sliding');
-            //// Pre-cache image
-            //$('<img />').attr({'src': imgUrl, 'data-image-num': i}).load(function() {
-            //    console.log('image loaded');
-            //    var imageDataNum = $(this).attr('data-image-num');
-            //    $('#photo-' + imageDataNum).css('background-image', 'url(' + imgUrl + ')').removeClass('fade-out').addClass('fade-in');
-            //});
+            // Build the URL for the image.
+            var $imgUrl = 'http://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_n.jpg';
+            var $image = $('<img/>', { src: $imgUrl });
+            var $back = $('<div/>', { class: 'back', text: 'This is the back of the image.' });
+            // Create flipping image.
+            var $flipper = createFlipper($image, $back);
+            // TODO settle on background.
+            $back.parent().css('background-color', 'red');
+            // Image height and width is first available when image has loaded.
+            $image.load(function(e) {
+                // Set width and height of container based on size of image.
+                $flipper.css('width', $(this).width());
+                $flipper.css('height', $(this).height());
+            });
+            $('#search-results-container').append($flipper);
 
         });
     });
     photoPagesRequested++;
 });
+
+/**
+ * Constructs an element that is flipped to display its back when hovered.
+ * Note that the returned element relies on the CSS3 defined in flipper.css.
+ * @param $frontContents The contents to display when not hovering the element.
+ * @param $backContents The contents to display when hovering the element.
+ * @returns {*|jQuery|HTMLElement} The 'flipper' element.
+ */
+function createFlipper($frontContents, $backContents) {
+    var $flipperContainer = $('<div/>', { class: 'flipper-container'});
+    var $flipper = $('<div/>', { class: 'flipper'});
+    var $flipperFront = $('<div/>', { class: 'flipper-front'});
+    var $flipperBack = $('<div/>', { class: 'flipper-back'});
+
+    $flipperFront.append($frontContents);
+    $flipperBack.append($backContents);
+
+    $flipper.append($flipperFront);
+    $flipper.append($flipperBack);
+
+    $flipperContainer.append($flipper);
+
+    return $flipperContainer;
+}
