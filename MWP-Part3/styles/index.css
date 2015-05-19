@@ -1,5 +1,14 @@
 /* Styles for the index.html */
 
+#content-lhs {
+    float: left;
+}
+
+#content-rhs {
+    float: right;
+}
+
+
 /* Style images returned from the flickr search */
 #search-results-container img {
     /*width: 50%;*/
@@ -79,4 +88,29 @@ div.grid-item > * {
 .flipper-container {
     box-shadow: 5px 5px 5px black;
     -webkit-box-shadow: -5px 5px 5px black;
+}
+
+/*#bulletin {*/
+    /*background-image: url("../images/bulletin-board.jpg");*/
+    /*width: 485px;*/
+    /*height: 640px;*/
+    /*max-height: 970px;*/
+    /*max-width: 1280px;*/
+    /*background-size: 100%;*/
+    /*box-shadow: 5px 5px 5px #aaa;*/
+/*}*/
+
+#bulletin {
+    background-image: url("../images/cork.jpg");
+    width: 426px;
+    max-width: 426px;
+    height: 1280px;
+
+    /* TODO consider this wooden border. */
+    /*border-image-source: url("../images/wood2.jpg");*/
+    /*border-image-width: 25px;*/
+    /*border-image-slice: 60;*/
+    /*border-image-repeat: round;*/
+
+    box-shadow: 5px 5px 5px #aaa;
 }
