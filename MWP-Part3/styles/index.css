@@ -73,3 +73,10 @@ div.grid-item {
 div.grid-item > * {
     vertical-align: middle;
 }
+.search-result {
+    margin: 5px;
+}
+.flipper-container {
+    box-shadow: 5px 5px 5px black;
+    -webkit-box-shadow: -5px 5px 5px black;
+}

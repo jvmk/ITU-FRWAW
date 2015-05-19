@@ -34,6 +34,8 @@ $(document).on('submit', '#formSearchFlickr', function(e) {
                 $flipper.css('width', $(this).width());
                 $flipper.css('height', $(this).height());
 
+                
+
                 // Create map element and append to back element.
                 // TODO move this outside load function?
                 var mapOptions = {
@@ -42,7 +44,9 @@ $(document).on('submit', '#formSearchFlickr', function(e) {
                 };
                 var map = new google.maps.Map($back[0], mapOptions);
             });
-            $('#search-results-container').append($flipper);
+            // wrap flipper in container element.
+            var $resultContainer = $('<div/>', { class: 'search-result' });
+            $('#search-results-container').append($resultContainer.append($flipper));
         });
     });
     photoPagesRequested++;
