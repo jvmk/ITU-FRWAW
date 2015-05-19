@@ -3,7 +3,7 @@
  */
 
 var apiEndpoint = 'https://api.flickr.com/services/rest/?jsoncallback=?';
-
+var apiKey = '597cb449e3ec5c90279f217e32a239b2';
 /**
  * Perform a free text search for photos on flickr.
  * @param searchTerm The text that is part of the title, description or photo tags.
@@ -14,11 +14,26 @@ var apiEndpoint = 'https://api.flickr.com/services/rest/?jsoncallback=?';
 function searchFlickr(searchTerm, photosPerPage, pageNumber, onSuccessHandler) {
     var requestData = {
         'method': 'flickr.photos.search',
-        'api_key': '597cb449e3ec5c90279f217e32a239b2',
+        'api_key': apiKey,
         'text': searchTerm,
         'page': pageNumber,
         'per_page': photosPerPage,
         'format': 'json'
     };
     $.getJSON(apiEndpoint, requestData, onSuccessHandler);
+}
+
+/**
+ * Retrieves location data for a photo.
+ * @param photoId The ID of the photo for which location data is to be retrieved.
+ * @param responseHandler A function that handles the JSON response.
+ */
+function getPhotoLocation(photoId, responseHandler) {
+    var requestData = {
+        'method': 'flickr.photos.geo.getLocation',
+        'api_key': apiKey,
+        'photo_id': photoId,
+        'format': 'json'
+    };
+    $.getJSON(apiEndpoint, requestData, responseHandler);
 }

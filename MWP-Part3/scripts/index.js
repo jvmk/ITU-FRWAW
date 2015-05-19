@@ -34,15 +34,30 @@ $(document).on('submit', '#formSearchFlickr', function(e) {
                 $flipper.css('width', $(this).width());
                 $flipper.css('height', $(this).height());
 
+                // Get location data and create a map to show where photo was shot.
+                getPhotoLocation(photo.id, function(response) {
+                    if (response.stat === 'ok') {
+                        // Location data available.
+                        // Create map element and append to back element.
+                        var latLng = new google.maps.LatLng(parseFloat(response.photo.location.latitude), parseFloat(response.photo.location.longitude));
+                        var mapOptions = {
+                            center: latLng,
+                            zoom: 10
+                        };
+                        var map = new google.maps.Map($back[0], mapOptions);
+                        // Set a marker to display exact photo location.
+                        var marker = new google.maps.Marker({
+                            position: latLng,
+                            map: map,
+                            title: 'Photo location.'
+                        });
+                    } else {
+                        // Simplified error handling.
+                        $back.append($('<p>No location data available Q_Q</p>'));
+                        $back.css('color', 'white');
+                    }
+                });
                 
-
-                // Create map element and append to back element.
-                // TODO move this outside load function?
-                var mapOptions = {
-                    center: { lat: -34.397, lng: 150.644},
-                    zoom: 8
-                };
-                var map = new google.maps.Map($back[0], mapOptions);
             });
             // wrap flipper in container element.
             var $resultContainer = $('<div/>', { class: 'search-result' });
