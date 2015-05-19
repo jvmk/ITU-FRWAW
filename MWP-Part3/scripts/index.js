@@ -20,19 +20,34 @@ $(document).on('submit', '#formSearchFlickr', function(e) {
         $.each(data.photos.photo, function(i, photo) {
             // Build the URL for the image.
             var $imgUrl = 'http://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_n.jpg';
+            var $front = $('<div/>');
             var $image = $('<img/>', { src: $imgUrl });
             var $back = $('<div/>', { class: 'map' });
-            $back.css('width', '100%');
-            $back.css('height', '100%');
+            var $btnLocation = $('<input/>', { type: 'image', src: 'images/location-icon.png', class: 'btn-flip', alt: 'Photo Location.'});
+            //$back.css('width', '100%');
+            //$back.css('height', '100%');
+            $back.css('overflow', 'hidden');
             // Create flipping image.
-            var $flipper = createFlipper($image, $back);
+            $front.append($image);
+            $front.append($btnLocation);
+            //$front.css('overflow', 'hidden');
+            var $flipper = createFlipper($front, $back);
             // TODO settle on background.
-            $back.parent().css('background-color', 'black');
+            //$back.parent().css('background-color', 'black');
             // Image height and width is first available when image has loaded.
             $image.load(function(e) {
-                // Set width and height of container based on size of image.
-                $flipper.css('width', $(this).width());
-                $flipper.css('height', $(this).height());
+
+                // Set size of container based on size of image and image-button.
+                $flipper.css('height', $front.outerHeight(true));
+                // (for some reason $front.outerWidth(true) does not take the actual size of the image into account)
+                // (hence we must manually compute the width and add margins like so:)
+                var $w = $(this).width() + $front.outerWidth(true) - $front.outerWidth();
+                console.log('setting container width to ' + $w);
+                $flipper.css('width', $w);
+
+                // Set size of map to match that of the image on the front.
+                $back.css('width', $(this).width());
+                $back.css('height', $(this).height());
 
                 // Get location data and create a map to show where photo was shot.
                 getPhotoLocation(photo.id, function(response) {
@@ -57,7 +72,7 @@ $(document).on('submit', '#formSearchFlickr', function(e) {
                         $back.css('color', 'white');
                     }
                 });
-                
+
             });
             // wrap flipper in container element.
             var $resultContainer = $('<div/>', { class: 'search-result' });

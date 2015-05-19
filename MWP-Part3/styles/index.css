@@ -90,6 +90,27 @@ div.grid-item > * {
     -webkit-box-shadow: -5px 5px 5px black;
 }
 
+.flipper-front, .flipper-back {
+    background-color: khaki;
+    overflow: hidden;
+    /*padding: 10px 10px 10px 10px;*/
+    /*box-sizing: border-box;*/
+    /*-webkit-box-sizing: border-box;*/
+}
+
+.flipper-front>div, .flipper-back>div {
+    margin: 10px 10px 10px 10px;
+    overflow: auto;
+}
+
+.btn-flip {
+    width: 40px;
+    height: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    float: right;
+    display: block;
+}
 /*#bulletin {*/
     /*background-image: url("../images/bulletin-board.jpg");*/
     /*width: 485px;*/
