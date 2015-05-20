@@ -22,16 +22,24 @@ $(document).on('submit', '#formSearchFlickr', function(e) {
             var $imgUrl = 'http://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_n.jpg';
             var $front = $('<div/>');
             var $image = $('<img/>', { src: $imgUrl });
-            var $back = $('<div/>', { class: 'map' });
+            var $back = $('<div/>');
             var $btnLocation = $('<input/>', { type: 'image', src: 'images/location-icon.png', class: 'btn-flip', alt: 'Photo Location.'});
+            var $btnImage = $('<input/>', { type: 'image', src: 'images/flip-icon.png', class: 'btn-flip', alt: 'Photo.'});
 
             // Flip image when location button is clicked.
-            $btnLocation.one('click', function(e) {
+            $btnLocation.on('click', function(e) {
                 e.preventDefault();
                 $(this).parents('.flipper').addClass('flipped');
             });
+            // Flip from map to image when flip button is clicked.
+            $btnImage.on('click', function(e) {
+                e.preventDefault();
+                $(this).parents('.flipper').removeClass('flipped');
+            });
 
             $back.css('overflow', 'hidden');
+            $back.append($btnImage);
+
             // Create flipping image.
             $front.append($image);
             $front.append($btnLocation);
@@ -56,8 +64,11 @@ $(document).on('submit', '#formSearchFlickr', function(e) {
                 $flipper.css('width', $w);
 
                 // Set size of map to match that of the image on the front.
-                $back.css('width', $(this).width());
-                $back.css('height', $(this).height());
+                //$back.css('width', $(this).width());
+                //$back.css('height', $(this).height());
+                var $imgWidth = $(this).width();
+                var $imgHeight = $(this).height();
+
 
                 // AJAX call: get location data and create a map to show where photo was shot.
                 getPhotoLocation(photo.id, function(response) {
@@ -69,16 +80,24 @@ $(document).on('submit', '#formSearchFlickr', function(e) {
                             center: latLng,
                             zoom: 10
                         };
-                        var map = new google.maps.Map($back[0], mapOptions);
+                        var $mapDiv = $('<div/>');
+                        $mapDiv.width($imgWidth);
+                        $mapDiv.height($imgHeight);
+                        var map = new google.maps.Map($mapDiv[0], mapOptions);
                         // Set a marker to display exact photo location.
                         var marker = new google.maps.Marker({
                             position: latLng,
                             map: map,
                             title: 'Photo location.'
                         });
+                        $back.prepend($mapDiv);
                     } else {
                         // Simplified error handling.
-                        $back.append($('<p>No location data available Q_Q</p>'));
+                        var $errMsg = $('<p>No location data available Q_Q</p>');
+                        $back.prepend($errMsg);
+                        $errMsg.width($imgWidth);
+                        $errMsg.height($imgHeight);
+                        $errMsg.css('margin', '0');
                         $back.css('color', 'white');
                     }
                 });
