@@ -85,9 +85,14 @@ div.grid-item > * {
 .search-result {
     margin: 5px;
 }
-.flipper-container {
-    box-shadow: 5px 5px 5px black;
-    -webkit-box-shadow: -5px 5px 5px black;
+
+.flipper {
+    box-shadow: 7px 7px 7px 0px rgba(0,0,0,0.7);
+}
+
+.flipped {
+    /* Reverse the shadow when element is flipped */
+    box-shadow: -7px 7px 7px 0px rgba(0,0,0,0.7);
 }
 
 .flipper-front, .flipper-back {

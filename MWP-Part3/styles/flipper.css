@@ -5,7 +5,6 @@
     /* Specify width and height so that div does not collapse.*/
     /*width: 500px;*/
     /*height: 500px;*/
-    overflow: hidden;
 }
 
 .flipper, .flipper-front, .flipper-back {
