@@ -38,8 +38,9 @@ $(document).on('submit', '#formSearchFlickr', function(e) {
             $image.load(function(e) {
 
                 // Set size of container based on size of image and image-button.
-                $flipper.css('height', $front.outerHeight(true));
-                // (for some reason $front.outerWidth(true) does not take the actual size of the image into account)
+                //$flipper.css('height', $(this).height() + $btnLocation.outerHeight(true) + $front.outerHeight(true) - $front.outerHeight());
+                $flipper.css('height', computeHeight($front));
+                // (for some reason $front.outerWidth(true) does not take the actual width of the image into account)
                 // (hence we must manually compute the width and add margins like so:)
                 var $w = $(this).width() + $front.outerWidth(true) - $front.outerWidth();
                 console.log('setting container width to ' + $w);
@@ -104,4 +105,15 @@ function createFlipper($frontContents, $backContents) {
     $flipperContainer.append($flipper);
 
     return $flipperContainer;
+}
+
+function computeHeight($parent) {
+    var $result = 0;
+    // sum width of children
+    $parent.children().each(function () {
+        $result += $(this).outerHeight(true);
+    });
+    // add parent margin
+    $result += $parent.outerHeight(true) - $parent.outerHeight();
+    return $result;
 }
