@@ -24,6 +24,13 @@ $(document).on('submit', '#formSearchFlickr', function(e) {
             var $image = $('<img/>', { src: $imgUrl });
             var $back = $('<div/>', { class: 'map' });
             var $btnLocation = $('<input/>', { type: 'image', src: 'images/location-icon.png', class: 'btn-flip', alt: 'Photo Location.'});
+
+            // Flip image when location button is clicked.
+            $btnLocation.one('click', function(e) {
+                e.preventDefault();
+                $(this).parents('.flipper').addClass('flipped');
+            });
+
             $back.css('overflow', 'hidden');
             // Create flipping image.
             $front.append($image);

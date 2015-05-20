@@ -13,9 +13,13 @@
     width: 100%;
 }
 
-.flipper-container:hover .flipper {
+.flipped {
     transform: rotateY(180deg);
 }
+
+/*.flipper-container:hover .flipper {*/
+    /*transform: rotateY(180deg);*/
+/*}*/
 
 .flipper {
     transition: all 1.0s linear;
