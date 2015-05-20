@@ -32,8 +32,17 @@ $(document).ready(function(e) {
         // Delay removal of photo element till the animation has ended.
         var $animationEndHandler = function (e) {
             console.log('animation ended');
-            $pushPin.remove();
-            $flipper.remove();
+            // Remove self (i.e. the push-pin) from DOM.
+            $(this).remove();
+
+            // Remove photo from DOM after playing an animation that simulates the image falling.
+            var $photoAnimationEndHandler = function (e) {
+                $(this).remove();
+            };
+            $flipper.on('webkitAnimationEnd', $photoAnimationEndHandler);
+            $flipper.on('animationend', $photoAnimationEndHandler);
+            $flipper.addClass('falling');
+
         };
         // Assign event handler (Chrome)
         $pushPin.on('webkitAnimationEnd', $animationEndHandler);

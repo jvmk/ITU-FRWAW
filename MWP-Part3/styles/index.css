@@ -81,6 +81,64 @@
 }
 /********************************************************************************/
 
+/********************************************************************************/
+/* Animation that drops an element (makes the element fall) */
+@keyframes falling {
+    0% {
+        -ms-transform: translate(0px,0px); /* IE 9 */
+        -webkit-transform: translate(0px,0px); /* Safari */
+        transform: translate(0px,0px);
+        opacity: 1;
+    }
+
+    75% {
+        -ms-transform: translate(0px,150%); /* IE 9 */
+        -webkit-transform: translate(0px,150%); /* Safari */
+        transform: translate(0px,150%);
+        opacity: 1;
+    }
+
+    100% {
+        -ms-transform: translate(0px,200%); /* IE 9 */
+        -webkit-transform: translate(0px,200%); /* Safari */
+        transform: translate(0px,200%);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes falling {
+    0% {
+        -ms-transform: translate(0px,0px); /* IE 9 */
+        -webkit-transform: translate(0px,0px); /* Safari */
+        transform: translate(0px,0px);
+        opacity: 1;
+    }
+
+    75% {
+        -ms-transform: translate(0px,150%); /* IE 9 */
+        -webkit-transform: translate(0px,150%); /* Safari */
+        transform: translate(0px,150%);
+        opacity: 1;
+    }
+
+    100% {
+        -ms-transform: translate(0px,200%); /* IE 9 */
+        -webkit-transform: translate(0px,200%); /* Safari */
+        transform: translate(0px,200%);
+        opacity: 0;
+    }
+}
+
+.falling {
+    -webkit-animation: falling 1s 1 linear;
+    animation: falling 1s 1 linear;
+    -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+    animation-fill-mode: forwards;
+    /* Increase z-index such that falling elements fall in front of other elements rather than behind other elements. */
+    z-index: 1000;
+}
+/********************************************************************************/
+
 .sliding {
     position: relative;
     animation-name: slide-in;
