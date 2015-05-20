@@ -141,19 +141,18 @@ div.grid-item > * {
     box-shadow: 5px 5px 5px #aaa;
 }
 
-#bulletin>.flipper-container::before {
+.push-pin {
     /* Adds a push-pin to images on the cork board. */
-
     content: '';
     background-image: radial-gradient(red 50%, black 100%);
-    position: absolute;
+    position: relative;
     left: 25px;
-    top: 3px;
+    top: 25px;
     z-index: 100;
-    width: 25px;
-    height: 25px;
-    -moz-border-radius: 25px;
-    -webkit-border-radius: 25px;
-    border-radius: 25px;
+    width: 20px;
+    height: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
     box-shadow: 7px 7px 7px 0px rgba(0,0,0,0.7);
 }

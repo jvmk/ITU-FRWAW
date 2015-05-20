@@ -17,6 +17,12 @@ $(document).ready(function(e) {
         e.preventDefault();
         var $elementId = e.originalEvent.dataTransfer.getData('text');
         e.originalEvent.target.appendChild(document.getElementById($elementId));
+        // Insert a push-pin.
+        var $pushPin = $('<div/>', { class: 'push-pin' });
+        var $flipper = $('#' + $elementId);
+        $pushPin.insertBefore($flipper);
+        // Horizontally center push-pin
+        $pushPin.css('left', ($flipper.outerWidth() / 2) - ($pushPin.width() / 2));
     });
 });
 
