@@ -24,33 +24,35 @@ $(document).on('submit', '#formSearchFlickr', function(e) {
             var $image = $('<img/>', { src: $imgUrl });
             var $back = $('<div/>', { class: 'map' });
             var $btnLocation = $('<input/>', { type: 'image', src: 'images/location-icon.png', class: 'btn-flip', alt: 'Photo Location.'});
-            //$back.css('width', '100%');
-            //$back.css('height', '100%');
             $back.css('overflow', 'hidden');
             // Create flipping image.
             $front.append($image);
             $front.append($btnLocation);
-            //$front.css('overflow', 'hidden');
             var $flipper = createFlipper($front, $back);
-            // TODO settle on background.
-            //$back.parent().css('background-color', 'black');
-            // Image height and width is first available when image has loaded.
-            $image.load(function(e) {
 
-                // Set size of container based on size of image and image-button.
-                //$flipper.css('height', $(this).height() + $btnLocation.outerHeight(true) + $front.outerHeight(true) - $front.outerHeight());
-                $flipper.css('height', computeHeight($front));
-                // (for some reason $front.outerWidth(true) does not take the actual width of the image into account)
-                // (hence we must manually compute the width and add margins like so:)
+            //$btnLocation.one('load', function(e) {
+            //    // recompute height of container when image button loads.
+            //    $flipper.height($front.outerHeight(true));
+            //});
+
+            // Add element to DOM.
+            var $resultContainer = $('<div/>', { class: 'search-result' });
+            $('#search-results-container').append($resultContainer.append($flipper));
+            // Image height and width is first available when image has loaded.
+            $image.one('load', function(e) {
+                // Update size of container to fit contents...
+                $flipper.height($front.outerHeight(true));
+                // Width is constrained by the width of the flickr image.
+                // For some reason $front.outerWidth(true) does not take the actual width of the image into account.
+                // Hence we must manually compute the width and add margins like so:
                 var $w = $(this).width() + $front.outerWidth(true) - $front.outerWidth();
-                console.log('setting container width to ' + $w);
                 $flipper.css('width', $w);
 
                 // Set size of map to match that of the image on the front.
                 $back.css('width', $(this).width());
                 $back.css('height', $(this).height());
 
-                // Get location data and create a map to show where photo was shot.
+                // AJAX call: get location data and create a map to show where photo was shot.
                 getPhotoLocation(photo.id, function(response) {
                     if (response.stat === 'ok') {
                         // Location data available.
@@ -73,11 +75,7 @@ $(document).on('submit', '#formSearchFlickr', function(e) {
                         $back.css('color', 'white');
                     }
                 });
-
             });
-            // wrap flipper in container element.
-            var $resultContainer = $('<div/>', { class: 'search-result' });
-            $('#search-results-container').append($resultContainer.append($flipper));
         });
     });
     photoPagesRequested++;
