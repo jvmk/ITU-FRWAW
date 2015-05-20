@@ -53,6 +53,34 @@
     to { top: 0px; }
 }
 
+/********************************************************************************/
+/* Animation that fades out an element. */
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.fadeout {
+    -webkit-animation: fadeout 400ms;
+    animation: fadeout 400ms;
+    -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+    animation-fill-mode: forwards;
+}
+/********************************************************************************/
+
 .sliding {
     position: relative;
     animation-name: slide-in;

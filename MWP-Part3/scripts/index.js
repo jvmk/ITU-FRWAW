@@ -23,6 +23,22 @@ $(document).ready(function(e) {
         $pushPin.insertBefore($flipper);
         // Horizontally center push-pin
         $pushPin.css('left', ($flipper.outerWidth() / 2) - ($pushPin.width() / 2));
+        // assign event handler for push-pin click
+        $pushPin.on('click', function(e) {
+            // Apply fade-out effect to indicate that the push-pin is removed.
+            $pushPin.addClass('fadeout');
+        });
+
+        // Delay removal of photo element till the animation has ended.
+        var $animationEndHandler = function (e) {
+            console.log('animation ended');
+            $pushPin.remove();
+            $flipper.remove();
+        };
+        // Assign event handler (Chrome)
+        $pushPin.on('webkitAnimationEnd', $animationEndHandler);
+        // Assign event handler (General)
+        $pushPin.on('animationend', $animationEndHandler);
     });
 });
 
@@ -167,4 +183,9 @@ function computeHeight($parent) {
     // add parent margin
     $result += $parent.outerHeight(true) - $parent.outerHeight();
     return $result;
+}
+
+function removePhoto($photoElementId) {
+    var $photo = $('#' + $photoElementId);
+    $photo.remove();
 }
