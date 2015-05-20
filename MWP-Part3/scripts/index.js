@@ -6,6 +6,18 @@ $(document).ready(function(e) {
     // declare dependency on other script
     var script = 'scripts/flickr.js';
     $("head").append('<script type="text/javascript" src="' + script + '"></script>');
+
+    // Allow drop on the bulletin board by preventing default behavior.
+    $('#bulletin').on('dragover', function(e) {
+        e.preventDefault();
+    });
+
+    // Move element to where it is dropped.
+    $('#bulletin').on('drop', function(e) {
+        e.preventDefault();
+        var $elementId = e.originalEvent.dataTransfer.getData('text');
+        e.originalEvent.target.appendChild(document.getElementById($elementId));
+    });
 });
 
 var photoPagesRequested = 1;
@@ -44,6 +56,15 @@ $(document).on('submit', '#formSearchFlickr', function(e) {
             $front.append($image);
             $front.append($btnLocation);
             var $flipper = createFlipper($front, $back);
+            // Add an ID (for drag and drop)
+            $flipper.attr('id', 'flickr-photo-' + photo.id);
+            // Set draggable
+            $flipper.attr('draggable', 'true');
+            // Set what is dragged
+            $flipper.on('dragstart', function(e) {
+                // Keep reference to ID of dragged element.
+                e.originalEvent.dataTransfer.setData('text', $(this).attr('id'));
+            });
 
             //$btnLocation.one('load', function(e) {
             //    // recompute height of container when image button loads.
