@@ -36,14 +36,14 @@ $(document).ready(function(e) {
 
     // Asign handlers for navigation buttons.
     $('#previous-search-results').on('click', function(ev) {
-        if (photoPagesRequested === 1) {
+        if (getSearchPageIndex() === 1) {
             // At first page, do nothing.
         } else {
             // First, clear photos for current page.
             $('#search-results-container').empty();
             // Go back one page...
-            photoPagesRequested--;
-            searchFlickr(searchTerm, photosPerPage, photoPagesRequested, function(data) {
+            setSearchPageIndex(getSearchPageIndex() - 1);
+            searchFlickr(searchTerm, photosPerPage, getSearchPageIndex(), function(data) {
                 handleFlickrSearchResult(data);
             });
         }
@@ -51,15 +51,49 @@ $(document).ready(function(e) {
     $('#next-search-results').on('click', function(ev) {
         // First, clear photos for current page.
         $('#search-results-container').empty();
-        photoPagesRequested++;
-        searchFlickr(searchTerm, photosPerPage, photoPagesRequested, function(data) {
+        setSearchPageIndex(getSearchPageIndex() + 1);
+        searchFlickr(searchTerm, photosPerPage, getSearchPageIndex(), function(data) {
             handleFlickrSearchResult(data);
         });
     });
 });
 
+/**
+ * Defines how many photos to display on each page.
+ * @type {number}
+ */
 var photosPerPage = 12;
-var photoPagesRequested = 1;
+
+/**
+ * The current page index for the current photo search.
+ * @type {number}
+ */
+var searchPageIndex = 1;
+
+/**
+ * Setter for search page index.
+ * Using the setter makes sure that visibility of nav buttons are also toggled.
+ * @param value
+ */
+function setSearchPageIndex(value) {
+    searchPageIndex = value;
+    if (searchPageIndex > 1) {
+        console.log('displaying both next and previous');
+        // display both next and previous nav items
+        $('#next-search-results').css('visibility', 'visible');
+        $('#previous-search-results').css('visibility', 'visible');
+    } else {
+        // Display only next nav item
+        console.log('displaying only next');
+        $('#next-search-results').css('visibility', 'visible');
+        $('#previous-search-results').css('visibility', 'hidden');
+    }
+}
+
+function getSearchPageIndex() {
+    return searchPageIndex;
+}
+
 var searchTerm = '';
 
 function handleFlickrSearchResult(data) {
@@ -80,20 +114,11 @@ $(document).on('submit', '#formSearchFlickr', function(e) {
     e.preventDefault();
     // Clear previous results.
     $('#search-results-container').empty();
-    photoPagesRequested = 1;
+    setSearchPageIndex(1);
     // fetch the search term.
     searchTerm = $('#inputSearchTerm').val();
-    searchFlickr(searchTerm, photosPerPage, photoPagesRequested, function(data) {
-        // Create a new element to display each image.
-        $.each(data.photos.photo, function(i, photo) {
-            // Build the URL for the image.
-            var $imgUrl = 'http://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_m.jpg';
-            // Create a container and append it to the DOM.
-            var $resultContainer = $('<div/>', { class: 'search-result' });
-            $('#search-results-container').append($resultContainer);
-            // Create the image element and append it to the container element.
-            createPhotoElement($resultContainer, $imgUrl, photo.id);
-        });
+    searchFlickr(searchTerm, photosPerPage, getSearchPageIndex(), function(data) {
+        handleFlickrSearchResult(data);
     });
 });
 

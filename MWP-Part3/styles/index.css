@@ -296,6 +296,7 @@ form {
 #search-results-navigation input[type='image'] {
     height: 60px;
     width: auto;
+    visibility: hidden; /* Initially hide navigation items as no search has been performed. */
 }
 
 #previous-search-results {
