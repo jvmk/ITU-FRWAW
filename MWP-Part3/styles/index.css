@@ -267,7 +267,7 @@ div.grid-item > * {
 form {
     margin-left: auto;
     margin-right: auto;
-    width: 75%;
+    width: 55%;
 }
 
 #inputSearchTerm {
@@ -279,19 +279,29 @@ form {
     border: 1px solid black;
     padding: 5px;
     color: brown;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 #search-results-navigation {
-    width: intrinsic; /* CSS3 way for fitting width to contents */
+    width: 55%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
     margin-bottom: 10px;
+    overflow: hidden;
 }
 
 #search-results-navigation input[type='image'] {
     height: 60px;
     width: auto;
-    margin-left: 20px;
-    margin-right: 20px;
+}
+
+#previous-search-results {
+    float: left;
+}
+
+#next-search-results {
+    float: right;
 }
