@@ -33,19 +33,57 @@ $(document).ready(function(e) {
     //localStorage.clear();
     // Load photos from local storage onto the cork board.
     initCorkBoard();
+
+    // Asign handlers for navigation buttons.
+    $('#previous-search-results').on('click', function(ev) {
+        if (photoPagesRequested === 1) {
+            // At first page, do nothing.
+        } else {
+            // First, clear photos for current page.
+            $('#search-results-container').empty();
+            // Go back one page...
+            photoPagesRequested--;
+            searchFlickr(searchTerm, photosPerPage, photoPagesRequested, function(data) {
+                handleFlickrSearchResult(data);
+            });
+        }
+    });
+    $('#next-search-results').on('click', function(ev) {
+        // First, clear photos for current page.
+        $('#search-results-container').empty();
+        photoPagesRequested++;
+        searchFlickr(searchTerm, photosPerPage, photoPagesRequested, function(data) {
+            handleFlickrSearchResult(data);
+        });
+    });
 });
 
+var photosPerPage = 12;
 var photoPagesRequested = 1;
+var searchTerm = '';
+
+function handleFlickrSearchResult(data) {
+    // Create a new element to display each image.
+    $.each(data.photos.photo, function(i, photo) {
+        // Build the URL for the image.
+        var $imgUrl = 'http://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_m.jpg';
+        // Create a container and append it to the DOM.
+        var $resultContainer = $('<div/>', { class: 'search-result' });
+        $('#search-results-container').append($resultContainer);
+        // Create the image element and append it to the container element.
+        createPhotoElement($resultContainer, $imgUrl, photo.id);
+    });
+}
 
 $(document).on('submit', '#formSearchFlickr', function(e) {
     // Block regular form submit that causes a page reload.
     e.preventDefault();
     // Clear previous results.
     $('#search-results-container').empty();
-
+    photoPagesRequested = 1;
     // fetch the search term.
-    var searchTerm = $('#inputSearchTerm').val();
-    searchFlickr(searchTerm, 12, photoPagesRequested, function(data) {
+    searchTerm = $('#inputSearchTerm').val();
+    searchFlickr(searchTerm, photosPerPage, photoPagesRequested, function(data) {
         // Create a new element to display each image.
         $.each(data.photos.photo, function(i, photo) {
             // Build the URL for the image.
@@ -57,7 +95,6 @@ $(document).on('submit', '#formSearchFlickr', function(e) {
             createPhotoElement($resultContainer, $imgUrl, photo.id);
         });
     });
-    photoPagesRequested++;
 });
 
 /**

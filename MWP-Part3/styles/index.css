@@ -280,3 +280,14 @@ form {
     padding: 5px;
     color: brown;
 }
+
+#search-results-navigation {
+    width: intrinsic; /* CSS3 way for fitting width to contents */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#search-results-navigation input[type='image'] {
+    height: 60px;
+    width: auto;
+}
