@@ -46,7 +46,7 @@ $(document).on('submit', '#formSearchFlickr', function(e) {
         // Create a new element to display each image.
         $.each(data.photos.photo, function(i, photo) {
             // Build the URL for the image.
-            var $imgUrl = 'http://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_n.jpg';
+            var $imgUrl = 'http://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_m.jpg';
             // Create a container and append it to the DOM.
             var $resultContainer = $('<div/>', { class: 'search-result' });
             $('#search-results-container').append($resultContainer);
