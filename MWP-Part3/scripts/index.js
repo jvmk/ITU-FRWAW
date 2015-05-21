@@ -21,8 +21,10 @@ $(document).ready(function(e) {
         var $pushPin = $('<div/>', { class: 'push-pin' });
         var $flipper = $('#' + $elementId);
         $pushPin.insertBefore($flipper);
-        // Horizontally center push-pin
-        $pushPin.css('left', ($flipper.outerWidth() / 2) - ($pushPin.width() / 2));
+
+        //// Horizontally center push-pin (now done using CSS)
+        //$pushPin.css('left', ($flipper.outerWidth() / 2) - ($pushPin.width() / 2));
+
         // assign event handler for push-pin click
         $pushPin.on('click', function(e) {
             // Apply fade-out effect to indicate that the push-pin is removed.

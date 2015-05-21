@@ -225,6 +225,12 @@ div.grid-item > * {
     /*border-image-repeat: round;*/
 
     box-shadow: 5px 5px 5px #aaa;
+    border-radius: 10px;
+}
+
+#bulletin .flipper-container, #bulletin .push-pin {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .push-pin {
@@ -232,7 +238,6 @@ div.grid-item > * {
     content: '';
     background-image: radial-gradient(red 50%, black 100%);
     position: relative;
-    left: 25px;
     top: 25px;
     z-index: 100;
     width: 20px;
