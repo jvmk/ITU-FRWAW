@@ -8,6 +8,9 @@
     float: right;
 }
 
+body {
+    background-image: url('../images/brickwall-animated.jpg');
+}
 
 /* Style images returned from the flickr search */
 #search-results-container img {
@@ -136,6 +139,7 @@
     animation-fill-mode: forwards;
     /* Increase z-index such that falling elements fall in front of other elements rather than behind other elements. */
     z-index: 1000;
+    position: relative;
 }
 /********************************************************************************/
 
