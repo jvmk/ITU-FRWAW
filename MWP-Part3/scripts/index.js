@@ -42,7 +42,7 @@ $(document).on('submit', '#formSearchFlickr', function(e) {
     e.preventDefault();
     // fetch the search term.
     var searchTerm = $('#inputSearchTerm').val();
-    searchFlickr(searchTerm, 10, photoPagesRequested, function(data) {
+    searchFlickr(searchTerm, 12, photoPagesRequested, function(data) {
         // Create a new element to display each image.
         $.each(data.photos.photo, function(i, photo) {
             // Build the URL for the image.
