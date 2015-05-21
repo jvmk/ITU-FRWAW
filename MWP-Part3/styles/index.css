@@ -260,4 +260,6 @@ div.grid-item > * {
 
 #search-results-container .search-result {
     display: inline-block;
+    vertical-align: middle;
+    transform: rotate(1deg);
 }
