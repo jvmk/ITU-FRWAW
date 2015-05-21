@@ -285,6 +285,8 @@ form {
     width: intrinsic; /* CSS3 way for fitting width to contents */
     margin-left: auto;
     margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #search-results-navigation input[type='image'] {
