@@ -259,6 +259,5 @@ div.grid-item > * {
 }
 
 #search-results-container .search-result {
-    /*display: inline-block;*/
-    float: left;
+    display: inline-block;
 }
