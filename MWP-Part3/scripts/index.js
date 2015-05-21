@@ -349,22 +349,6 @@ function initCorkBoard() {
                 addPushpin($('#' + photoData.id), photoData.id);
             }
         }
-
-        //// Create a photo element for every key found.
-        ////for(var key in localStorage) {
-        //for (var i = 0; i < localStorage.length; i++) {
-        //    var key = localStorage.key(i);
-        //    //console.log(key + ': ' + localStorage.getItem(key));
-        //    // recreate element on cork-board
-        //    var value = localStorage.getItem(key);
-        //    var photoData = JSON.parse(value);
-        //    console.log('adding photo with id=' + photoData.id);
-        //    createPhotoElement($('#bulletin'), photoData.url, photoData.id);
-        //    // apply saved rotation
-        //    $('#' + photoData.id).css('transform', photoData.rotation);
-        //}
-
-
     }
 }
 
