@@ -26,8 +26,10 @@ $(document).ready(function(e) {
         var $rotation = getRandomInt(-3, 4);
         $flipper.css('transform', 'rotate(' + $rotation + 'deg)');
 
-        // Store the photo ID in local storage.
-        savePhoto($elementId);
+        // Store the photo element in local storage.
+        var $photoUrl = $('#' + $elementId + ' img').attr('src');
+        var $rotation = $('#' + $elementId).css('transform');
+        savePhoto($elementId, $photoUrl, $rotation);
 
         //// Horizontally center push-pin (now done using CSS)
         //$pushPin.css('left', ($flipper.outerWidth() / 2) - ($pushPin.width() / 2));
@@ -58,6 +60,9 @@ $(document).ready(function(e) {
         // Assign event handler (General)
         $pushPin.on('animationend', $animationEndHandler);
     });
+    //localStorage.clear();
+    // Load photos from local storage onto the cork board.
+    initCorkBoard();
 });
 
 var photoPagesRequested = 1;
@@ -198,25 +203,29 @@ function createFlipper($frontContents, $backContents) {
 }
 
 /**
- * Stores the ID of flickr photo in local storage.
- * @param $photoId The ID of the flickr photo.
+ * Stores the URL of a flickr photo in local storage.
+ * @param $photoUrl The URL of the flickr photo.
  */
-function savePhoto($photoId) {
+function savePhoto(photoId, $photoUrl, $rotation) {
+    console.log('savePhoto called with ID='+photoId+' URL='+$photoUrl+' ROTATION='+$rotation);
     // Check if local storage is supported.
     if(typeof(Storage) !== "undefined") {
-        // Code for localStorage/sessionStorage.
-        var key;
-        if(localStorage.photoKeyCount) {
-            // New key is the current count of keys plus one.
-            key = Number(localStorage.photoKeyCount) + 1;
+        // The photo is stored as an object wrapped in an array.
+        // The array contains all photos stored locally.
+        // The array is ordered in ascending order (i.e. elements most recently added are at the end of the array).
+        var photoArr;
+        if(localStorage.photos) {
+            // Array already exists, get it.
+            photoArr = JSON.parse(localStorage.photos);
         } else {
-            // No keys yet, start from 1.
-            key = 1;
+            // No array found, create it.
+            photoArr = [];
         }
-        // Store the photo ID.
-        localStorage.key = $photoId;
-        // Update the key count.
-        localStorage.photoKeyCount = key;
+        // Add this photo to the array.
+        var obj = { id: photoId, url: $photoUrl, rotation: $rotation };
+        photoArr.push(obj);
+        // Overwrite the array in local storage.
+        localStorage.photos = JSON.stringify(photoArr);
     } else {
         alert('Sorry, browser does not support locally storing photos.');
     }
@@ -227,25 +236,34 @@ function savePhoto($photoId) {
  */
 function initCorkBoard() {
     if(typeof(Storage) !== "undefined") {
-        // Fetch the key count.
-        var keyCount;
-        if (localStorage.photoKeyCount) {
-            keyCount = Number(localStorage.photoKeyCount);
-        } else {
-            // No photos stored yet.
-            keyCount = 0;
-        }
-        // Create a photo element for every key found.
-        for (var key = 1; key <= keyCount; key++) {
-            if (localStorage.key) {
-                // Retrieve the flickr photo ID.
-                var $flickrId = localStorage.key;
-                // Build the photo flipper element
 
-            } else {
-                // Photo was removed.
+        if(localStorage.photos) {
+            // If there is an array with photos stored locally, get it.
+            var photoArr = JSON.parse(localStorage.photos);
+            for(var i = 0; i < photoArr.length; i++) {
+                // add a photo element on the cork board for each photo in the array
+                var photoData = photoArr[i];
+                createPhotoElement($('#bulletin'), photoData.url, photoData.id);
+                // apply saved rotation
+                $('#' + photoData.id).css('transform', photoData.rotation);
             }
         }
+
+        //// Create a photo element for every key found.
+        ////for(var key in localStorage) {
+        //for (var i = 0; i < localStorage.length; i++) {
+        //    var key = localStorage.key(i);
+        //    //console.log(key + ': ' + localStorage.getItem(key));
+        //    // recreate element on cork-board
+        //    var value = localStorage.getItem(key);
+        //    var photoData = JSON.parse(value);
+        //    console.log('adding photo with id=' + photoData.id);
+        //    createPhotoElement($('#bulletin'), photoData.url, photoData.id);
+        //    // apply saved rotation
+        //    $('#' + photoData.id).css('transform', photoData.rotation);
+        //}
+
+
     }
 }
 
