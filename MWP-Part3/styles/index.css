@@ -2,10 +2,16 @@
 
 #content-lhs {
     float: left;
+    overflow: hidden;
+    margin: 10px;
+    /* Calculate width based on width of RHS content (including margins of this element and RHS element) */
+    width: calc(100% - 426px - 10px - 10px - 10px - 10px);
 }
 
 #content-rhs {
     float: right;
+    width: 426px;
+    margin: 10px;
 }
 
 body {
@@ -218,7 +224,7 @@ div.grid-item > * {
 
 #bulletin {
     background-image: url("../images/cork.jpg");
-    width: 426px;
+    width: 100%;
     max-width: 426px;
     height: 1280px;
 
@@ -228,7 +234,7 @@ div.grid-item > * {
     /*border-image-slice: 60;*/
     /*border-image-repeat: round;*/
 
-    box-shadow: 5px 5px 5px #aaa;
+    box-shadow: 7px 7px 7px 0px rgba(0,0,0,0.7);
     border-radius: 10px;
 }
 
@@ -250,4 +256,9 @@ div.grid-item > * {
     -webkit-border-radius: 20px;
     border-radius: 20px;
     box-shadow: 7px 7px 7px 0px rgba(0,0,0,0.7);
+}
+
+#search-results-container .search-result {
+    /*display: inline-block;*/
+    float: left;
 }
