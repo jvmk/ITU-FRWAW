@@ -22,6 +22,10 @@ $(document).ready(function(e) {
         var $flipper = $('#' + $elementId);
         $pushPin.insertBefore($flipper);
 
+        // Add a random rotation to the picture when posted on the cork board.
+        var $rotation = getRandomInt(-3, 4);
+        $flipper.css('transform', 'rotate(' + $rotation + 'deg)');
+
         //// Horizontally center push-pin (now done using CSS)
         //$pushPin.css('left', ($flipper.outerWidth() / 2) - ($pushPin.width() / 2));
 
@@ -183,6 +187,16 @@ function createFlipper($frontContents, $backContents) {
     $flipperContainer.append($flipper);
 
     return $flipperContainer;
+}
+
+/**
+ * Courtesy of https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+ *
+ * Returns a random integer between min (inclusive) and max (inclusive)
+ * Using Math.round() will give you a non-uniform distribution!
+ */
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function computeHeight($parent) {
