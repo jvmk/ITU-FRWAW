@@ -40,6 +40,9 @@ var photoPagesRequested = 1;
 $(document).on('submit', '#formSearchFlickr', function(e) {
     // Block regular form submit that causes a page reload.
     e.preventDefault();
+    // Clear previous results.
+    $('#search-results-container').empty();
+
     // fetch the search term.
     var searchTerm = $('#inputSearchTerm').val();
     searchFlickr(searchTerm, 12, photoPagesRequested, function(data) {
