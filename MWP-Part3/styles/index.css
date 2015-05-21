@@ -2,7 +2,7 @@
 
 #content-lhs {
     float: left;
-    overflow: hidden;
+    /*overflow: hidden;*/
     margin: 10px;
     /* Calculate width based on width of RHS content (including margins of this element and RHS element) */
     width: calc(100% - 426px - 10px - 10px - 10px - 10px);
@@ -262,4 +262,19 @@ div.grid-item > * {
     display: inline-block;
     vertical-align: middle;
     transform: rotate(1deg);
+}
+
+form {
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+#inputSearchTerm {
+    width: 100%;
+    font-size: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 7px 7px 7px 0px rgba(0,0,0,0.7);
+
 }
