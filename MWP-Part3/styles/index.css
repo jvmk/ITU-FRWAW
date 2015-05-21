@@ -88,46 +88,46 @@ body {
 /* Animation that drops an element (makes the element fall) */
 @keyframes falling {
     0% {
-        -ms-transform: translate(0px,0px); /* IE 9 */
-        -webkit-transform: translate(0px,0px); /* Safari */
-        transform: translate(0px,0px);
+        -ms-transform: translateY(0px); /* IE 9 */
+        -webkit-transform: translateY(0px); /* Safari */
+        transform: translateY(0px);
         opacity: 1;
     }
 
     75% {
-        -ms-transform: translate(0px,150%); /* IE 9 */
-        -webkit-transform: translate(0px,150%); /* Safari */
-        transform: translate(0px,150%);
+        -ms-transform: translateY(150%); /* IE 9 */
+        -webkit-transform: translateY(150%); /* Safari */
+        transform: translateY(150%);
         opacity: 1;
     }
 
     100% {
-        -ms-transform: translate(0px,200%); /* IE 9 */
-        -webkit-transform: translate(0px,200%); /* Safari */
-        transform: translate(0px,200%);
+        -ms-transform: translateY(200%); /* IE 9 */
+        -webkit-transform: translateY(200%); /* Safari */
+        transform: translateY(200%);
         opacity: 0;
     }
 }
 
 @-webkit-keyframes falling {
     0% {
-        -ms-transform: translate(0px,0px); /* IE 9 */
-        -webkit-transform: translate(0px,0px); /* Safari */
-        transform: translate(0px,0px);
+        -ms-transform: translateY(0px); /* IE 9 */
+        -webkit-transform: translateY(0px); /* Safari */
+        transform: translateY(0px);
         opacity: 1;
     }
 
     75% {
-        -ms-transform: translate(0px,150%); /* IE 9 */
-        -webkit-transform: translate(0px,150%); /* Safari */
-        transform: translate(0px,150%);
+        -ms-transform: translateY(150%); /* IE 9 */
+        -webkit-transform: translateY(150%); /* Safari */
+        transform: translateY(150%);
         opacity: 1;
     }
 
     100% {
-        -ms-transform: translate(0px,200%); /* IE 9 */
-        -webkit-transform: translate(0px,200%); /* Safari */
-        transform: translate(0px,200%);
+        -ms-transform: translateY(200%); /* IE 9 */
+        -webkit-transform: translateY(200%); /* Safari */
+        transform: translateY(200%);
         opacity: 0;
     }
 }
