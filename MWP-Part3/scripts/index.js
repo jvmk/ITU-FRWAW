@@ -17,10 +17,9 @@ $(document).ready(function(e) {
         e.preventDefault();
         var $elementId = e.originalEvent.dataTransfer.getData('text');
         e.originalEvent.target.appendChild(document.getElementById($elementId));
-        // Insert a push-pin.
-        var $pushPin = $('<div/>', { class: 'push-pin' });
         var $flipper = $('#' + $elementId);
-        $pushPin.insertBefore($flipper);
+        // Insert a push-pin.
+        addPushpin($flipper, $elementId);
 
         // Add a random rotation to the picture when posted on the cork board.
         var $rotation = getRandomInt(-3, 4);
@@ -30,35 +29,6 @@ $(document).ready(function(e) {
         var $photoUrl = $('#' + $elementId + ' img').attr('src');
         var $rotation = $('#' + $elementId).css('transform');
         savePhoto($elementId, $photoUrl, $rotation);
-
-        //// Horizontally center push-pin (now done using CSS)
-        //$pushPin.css('left', ($flipper.outerWidth() / 2) - ($pushPin.width() / 2));
-
-        // assign event handler for push-pin click
-        $pushPin.on('click', function(e) {
-            // Apply fade-out effect to indicate that the push-pin is removed.
-            $pushPin.addClass('fadeout');
-        });
-
-        // Delay removal of photo element till the animation has ended.
-        var $animationEndHandler = function (e) {
-            console.log('animation ended');
-            // Remove self (i.e. the push-pin) from DOM.
-            $(this).remove();
-
-            // Remove photo from DOM after playing an animation that simulates the image falling.
-            var $photoAnimationEndHandler = function (e) {
-                $(this).remove();
-            };
-            $flipper.on('webkitAnimationEnd', $photoAnimationEndHandler);
-            $flipper.on('animationend', $photoAnimationEndHandler);
-            $flipper.addClass('falling');
-
-        };
-        // Assign event handler (Chrome)
-        $pushPin.on('webkitAnimationEnd', $animationEndHandler);
-        // Assign event handler (General)
-        $pushPin.on('animationend', $animationEndHandler);
     });
     //localStorage.clear();
     // Load photos from local storage onto the cork board.
@@ -203,6 +173,44 @@ function createFlipper($frontContents, $backContents) {
 }
 
 /**
+ * Adds a push-pin to a photo element (and also adds event handlers).
+ * @param $photo The photo to which the push-pin is tied.
+ * @param $photoId The ID of the element that is to be removed from the DOM and local storage when the push-pin is clicked.
+ */
+function addPushpin($photo, $photoId) {
+    // Insert a push-pin.
+    var $pushPin = $('<div/>', { class: 'push-pin' });
+    $pushPin.insertBefore($photo);
+
+    // assign event handler for push-pin click
+    $pushPin.on('click', function(e) {
+        // Apply fade-out effect to indicate that the push-pin is removed.
+        $pushPin.addClass('fadeout');
+    });
+
+    // Delay removal of photo element till the animation has ended.
+    var $animationEndHandler = function (e) {
+        // Remove self (i.e. the push-pin) from DOM.
+        $(this).remove();
+
+        // Remove photo from DOM after playing an animation that simulates the image falling.
+        var $photoAnimationEndHandler = function (e) {
+            $(this).remove();
+            // Remove from local storage
+            deletePhoto($photoId);
+        };
+        $photo.on('webkitAnimationEnd', $photoAnimationEndHandler);
+        $photo.on('animationend', $photoAnimationEndHandler);
+        $photo.addClass('falling');
+
+    };
+    // Assign the event handler to the push-pin (Chrome)
+    $pushPin.on('webkitAnimationEnd', $animationEndHandler);
+    // Assign the event handler to the push-pin (General)
+    $pushPin.on('animationend', $animationEndHandler);
+}
+
+/**
  * Stores the URL of a flickr photo in local storage.
  * @param $photoUrl The URL of the flickr photo.
  */
@@ -232,6 +240,31 @@ function savePhoto(photoId, $photoUrl, $rotation) {
 }
 
 /**
+ * Deletes a photo from local storage.
+ * @param $photoId ID of the photo that is to be deleted from local storage.
+ */
+function deletePhoto($photoId) {
+    if(typeof(Storage) !== "undefined" && localStorage.photos) {
+        var photoArr = JSON.parse(localStorage.photos);
+        var index = -1;
+        // Search the photo array for the photo we are to delete.
+        for (var i = 0; i < photoArr.length; i++) {
+            if (photoArr[i].id === $photoId) {
+                // found the matching photo, log index.
+                index = i;
+                break;
+            }
+        }
+        if (index > -1) {
+            // Remove the photo from the array.
+            photoArr.splice(index, 1);
+            // Overwrite the local storage array with the resulting array.
+            localStorage.photos = JSON.stringify(photoArr);
+        }
+    }
+}
+
+/**
  * Fills the cork board with photos based on locally stored photo IDs.
  */
 function initCorkBoard() {
@@ -243,9 +276,12 @@ function initCorkBoard() {
             for(var i = 0; i < photoArr.length; i++) {
                 // add a photo element on the cork board for each photo in the array
                 var photoData = photoArr[i];
+                console.log('Found photo: ' + JSON.stringify(photoData));
                 createPhotoElement($('#bulletin'), photoData.url, photoData.id);
                 // apply saved rotation
                 $('#' + photoData.id).css('transform', photoData.rotation);
+                // add the push-pin
+                addPushpin($('#' + photoData.id), photoData.id);
             }
         }
 
