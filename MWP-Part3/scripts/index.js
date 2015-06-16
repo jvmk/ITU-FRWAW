@@ -214,10 +214,10 @@ function createPhotoElement($parentElem, $photoUrl, $flickrPhotoId) {
 }
 
 /**
- * Constructs an element that is flipped to display its back when hovered.
+ * Constructs an element that can be flipped to display its back.
  * Note that the returned element relies on the CSS3 defined in flipper.css.
- * @param $frontContents The contents to display when not hovering the element.
- * @param $backContents The contents to display when hovering the element.
+ * @param $frontContents The front side contents.
+ * @param $backContents The back side contents.
  * @returns {*|jQuery|HTMLElement} The 'flipper' element.
  */
 function createFlipper($frontContents, $backContents) {
